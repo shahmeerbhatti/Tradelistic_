@@ -1,0 +1,145 @@
+.super-admin-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 14px 22px;
+  background: rgba(241, 251, 245, 0.82);
+  border-bottom: 1px solid rgba(184, 255, 209, 0.78);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 14px 40px rgba(4, 99, 44, 0.08);
+}
+
+.super-admin-nav-container {
+  width: min(1800px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.super-admin-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+}
+
+.super-admin-nav-logo {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  place-items: center;
+  border-radius: 22px;
+  background: #00C853;
+  color: white;
+  font-size: 26px;
+  box-shadow: 0 18px 34px rgba(4, 99, 44, 0.22);
+  overflow: hidden;
+}
+
+.super-admin-nav-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+}
+
+.super-admin-nav-brand h2,
+.super-admin-nav-brand p {
+  margin: 0;
+}
+
+.super-admin-nav-brand h2 {
+  color: #07112d;
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 950;
+}
+
+.super-admin-nav-brand p {
+  margin-top: 6px;
+  color: #667590;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.super-admin-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.super-admin-nav-link,
+.super-admin-logout,
+.super-admin-profile {
+  border: 1px solid #ccefd9;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #07112d;
+  min-height: 64px;
+  padding: 0 20px;
+  font: inherit;
+  font-weight: 900;
+}
+
+.super-admin-nav-link,
+.super-admin-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.super-admin-nav-link:hover,
+.super-admin-logout:hover {
+  border-color: #00C853;
+  color: #00C853;
+}
+
+.super-admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.super-admin-profile-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 16px;
+  background: #e9f8ef;
+  color: #00C853;
+}
+
+.super-admin-profile strong,
+.super-admin-profile small {
+  display: block;
+}
+
+.super-admin-profile strong {
+  font-size: 15px;
+}
+
+.super-admin-profile small {
+  color: #667590;
+  font-size: 11px;
+  letter-spacing: 0;
+  font-weight: 950;
+}
+
+.super-admin-logout {
+  color: #c92a2a;
+}
+
+@media (max-width: 900px) {
+  .super-admin-nav-container,
+  .super-admin-nav-actions {
+    flex-wrap: wrap;
+  }
+
+  .super-admin-nav-actions {
+    width: 100%;
+  }
+}
