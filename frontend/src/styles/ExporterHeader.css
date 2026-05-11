@@ -2,10 +2,10 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid rgba(4, 99, 44, 0.12);
+  border-bottom: 1px solid rgba(47, 128, 237, 0.12);
   background: rgba(245, 249, 255, 0.88);
   backdrop-filter: blur(18px);
-  box-shadow: 0 16px 48px rgba(4, 99, 44, 0.08);
+  box-shadow: 0 16px 48px rgba(47, 128, 237, 0.08);
 }
 
 [data-theme="dark"] .exporter-header {
@@ -45,10 +45,10 @@
 .exporter-back-button,
 .exporter-notification-btn,
 .logout-btn {
-  border: 1px solid rgba(4, 99, 44, 0.14);
+  border: 1px solid rgba(47, 128, 237, 0.14);
   background: rgba(255, 255, 255, 0.86);
-  color: #04632c;
-  box-shadow: 0 12px 28px rgba(4, 99, 44, 0.08);
+  color: #165ec4;
+  box-shadow: 0 12px 28px rgba(47, 128, 237, 0.08);
 }
 
 .exporter-back-button {
@@ -73,8 +73,8 @@
   height: 58px;
   place-items: center;
   border-radius: 21px;
-  background: #00C853;
-  box-shadow: 0 18px 36px rgba(4, 99, 44, 0.24);
+  background: #2f80ed;
+  box-shadow: 0 18px 36px rgba(47, 128, 237, 0.24);
   overflow: hidden;
 }
 
@@ -110,12 +110,12 @@
   gap: 10px;
   max-width: min(320px, 24vw);
   min-height: 54px;
-  border: 1px solid rgba(4, 99, 44, 0.16);
+  border: 1px solid rgba(47, 128, 237, 0.16);
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.9);
   color: #071126;
   padding: 0 16px;
-  box-shadow: 0 16px 38px rgba(4, 99, 44, 0.08);
+  box-shadow: 0 16px 38px rgba(47, 128, 237, 0.08);
 }
 
 .exporter-store-pill i {
@@ -124,8 +124,8 @@
   height: 34px;
   place-items: center;
   border-radius: 13px;
-  background: #e9f8ef;
-  color: #00C853;
+  background: #eaf3ff;
+  color: #2f80ed;
   flex: 0 0 auto;
 }
 
@@ -143,11 +143,11 @@
   align-items: center;
   gap: 8px;
   min-height: 54px;
-  border: 1px solid rgba(4, 99, 44, 0.12);
+  border: 1px solid rgba(47, 128, 237, 0.12);
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.74);
   padding: 7px;
-  box-shadow: 0 14px 34px rgba(4, 99, 44, 0.07);
+  box-shadow: 0 14px 34px rgba(47, 128, 237, 0.07);
 }
 
 .exporter-workspace-nav button {
@@ -159,7 +159,7 @@
   border: 0;
   border-radius: 16px;
   background: transparent;
-  color: #00C853;
+  color: #2f80ed;
   cursor: pointer;
   font-size: 0.82rem;
   font-weight: 950;
@@ -168,14 +168,14 @@
 }
 
 .exporter-workspace-nav button:hover {
-  background: #e9f8ef;
+  background: #eaf3ff;
   transform: translateY(-1px);
 }
 
 .exporter-workspace-nav button.active {
-  background: #00C853;
+  background: #2f80ed;
   color: #ffffff;
-  box-shadow: 0 12px 24px rgba(4, 99, 44, 0.18);
+  box-shadow: 0 12px 24px rgba(47, 128, 237, 0.18);
 }
 
 .exporter-workspace-nav button.open-site {
@@ -206,7 +206,7 @@
 .exporter-back-button:hover,
 .logout-btn:hover {
   transform: translateY(-2px);
-  border-color: rgba(4, 99, 44, 0.34);
+  border-color: rgba(47, 128, 237, 0.34);
 }
 
 .exporter-notification-btn span {
@@ -230,7 +230,7 @@
   right: 0;
   top: calc(100% + 12px);
   width: min(380px, 88vw);
-  border: 1px solid rgba(4, 99, 44, 0.14);
+  border: 1px solid rgba(47, 128, 237, 0.14);
   border-radius: 26px;
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 24px 70px rgba(15, 23, 42, 0.16);
@@ -253,7 +253,7 @@
 .exporter-notification-head button {
   border: 0;
   background: transparent;
-  color: #00C853;
+  color: #2f80ed;
   font-size: 0.76rem;
   font-weight: 950;
 }
@@ -277,7 +277,7 @@
 }
 
 .exporter-notification-list > button.unread {
-  background: #e9f8ef;
+  background: #eaf3ff;
 }
 
 .exporter-notification-list > button > i {
@@ -286,7 +286,7 @@
   height: 36px;
   place-items: center;
   border-radius: 14px;
-  background: #00C853;
+  background: #2f80ed;
   color: #ffffff;
   flex: 0 0 auto;
 }
@@ -309,7 +309,7 @@
 
 .exporter-notification-empty {
   border-radius: 18px;
-  background: #e9f8ef;
+  background: #eaf3ff;
   color: #64748b;
   padding: 16px;
   font-weight: 850;
@@ -320,11 +320,11 @@
   align-items: center;
   gap: 12px;
   min-height: 54px;
-  border: 1px solid rgba(4, 99, 44, 0.14);
+  border: 1px solid rgba(47, 128, 237, 0.14);
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.9);
   padding: 6px 14px 6px 6px;
-  box-shadow: 0 16px 38px rgba(4, 99, 44, 0.08);
+  box-shadow: 0 16px 38px rgba(47, 128, 237, 0.08);
 }
 
 .exporter-user-avatar {
@@ -333,8 +333,8 @@
   height: 44px;
   place-items: center;
   border-radius: 17px;
-  background: #e9f8ef;
-  color: #00C853;
+  background: #eaf3ff;
+  color: #2f80ed;
   font-size: 1.05rem;
 }
 
@@ -380,7 +380,7 @@
 [data-theme="dark"] .exporter-brand-text small,
 [data-theme="dark"] .exporter-user-type,
 [data-theme="dark"] .exporter-notification-list small {
-  color: #b8ffd1;
+  color: #b9d7ff;
 }
 
 [data-theme="dark"] .exporter-store-pill,
@@ -395,7 +395,7 @@
 }
 
 [data-theme="dark"] .exporter-workspace-nav button {
-  color: #b8ffd1;
+  color: #b9d7ff;
 }
 
 [data-theme="dark"] .exporter-workspace-nav button:hover {

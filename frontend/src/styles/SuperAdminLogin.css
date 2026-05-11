@@ -1,8 +1,8 @@
 .admin-login-page {
   min-height: 100dvh;
   background:
-    radial-gradient(circle at 18% 16%, rgba(0, 200, 83, 0.12), transparent 32%),
-    linear-gradient(135deg, #f1fbf5 0%, #e9f8ef 48%, #f8fffb 100%);
+    radial-gradient(circle at 18% 16%, rgba(47, 128, 237, 0.12), transparent 32%),
+    linear-gradient(135deg, #f4f7ff 0%, #eaf3ff 48%, #f8fbff 100%);
   color: #07112d;
   display: grid;
   place-items: center;
@@ -19,9 +19,9 @@
 
 .admin-login-brand,
 .admin-login-card {
-  border: 1px solid #ccefd9;
+  border: 1px solid #dce5f3;
   background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 24px 70px rgba(4, 99, 44, 0.14);
+  box-shadow: 0 24px 70px rgba(47, 128, 237, 0.14);
   backdrop-filter: blur(18px);
 }
 
@@ -40,10 +40,10 @@
   height: 88px;
   place-items: center;
   border-radius: 28px;
-  background: #00C853;
+  background: #2f80ed;
   color: white;
   font-size: 36px;
-  box-shadow: 0 22px 42px rgba(4, 99, 44, 0.28);
+  box-shadow: 0 22px 42px rgba(47, 128, 237, 0.28);
   overflow: hidden;
 }
 
@@ -81,8 +81,8 @@
 .admin-login-kicker {
   display: inline-flex;
   border-radius: 999px;
-  background: #e9f8ef;
-  color: #00C853;
+  background: #eaf3ff;
+  color: #2f80ed;
   padding: 9px 14px;
   font-size: 12px;
   font-weight: 950;
@@ -115,9 +115,9 @@
 
 .admin-login-card input {
   width: 100%;
-  border: 1px solid #ccefd9;
+  border: 1px solid #dce5f3;
   border-radius: 20px;
-  background: #f8fffb;
+  background: #f8fbff;
   color: #07112d;
   font: inherit;
   font-size: 16px;
@@ -127,8 +127,8 @@
 }
 
 .admin-login-card input:focus {
-  border-color: #00C853;
-  box-shadow: 0 0 0 5px rgba(0, 200, 83, 0.12);
+  border-color: #2f80ed;
+  box-shadow: 0 0 0 5px rgba(47, 128, 237, 0.12);
 }
 
 .admin-login-card button {
@@ -147,9 +147,9 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: #00C853;
+  background: #2f80ed;
   color: white;
-  box-shadow: 0 18px 34px rgba(4, 99, 44, 0.24);
+  box-shadow: 0 18px 34px rgba(47, 128, 237, 0.24);
 }
 
 .admin-login-card button:disabled {
@@ -158,8 +158,8 @@
 }
 
 .admin-login-secondary {
-  background: #e9f8ef;
-  color: #00C853;
+  background: #eaf3ff;
+  color: #2f80ed;
 }
 
 .admin-login-error {

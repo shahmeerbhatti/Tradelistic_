@@ -3,31 +3,35 @@ import { Link, useNavigate } from 'react-router-dom';
 import { getAllProducts, getRecommendations } from '../services/api';
 
 const categories = [
-  { value: 'electronics', label: 'Electronics', icon: 'fas fa-microchip', copy: 'Smart devices, audio, computing and daily tech.' },
-  { value: 'fashion', label: 'Fashion', icon: 'fas fa-shirt', copy: 'Clean apparel, accessories and lifestyle finds.' },
-  { value: 'home', label: 'Home & Living', icon: 'fas fa-couch', copy: 'Comfort products and practical home upgrades.' },
+  { value: 'electronics', label: 'Electronics', icon: 'fas fa-microchip', copy: 'Laptops, phones, audio and smart devices' },
+  { value: 'fashion', label: 'Fashion', icon: 'fas fa-shirt', copy: 'Apparel, accessories and daily essentials' },
+  { value: 'home', label: 'Home', icon: 'fas fa-couch', copy: 'Furniture, decor and household upgrades' },
+  { value: 'books', label: 'Books', icon: 'fas fa-book-open', copy: 'Study, business and lifestyle reading' },
+];
+
+const demoDeals = [
+  { title: 'Importer essentials', value: 'Up to 25% off', icon: 'fas fa-tags' },
+  { title: 'Verified sellers', value: 'Trusted stores', icon: 'fas fa-shield-halved' },
+  { title: 'Demo checkout', value: 'Stripe-ready', icon: 'fas fa-credit-card' },
 ];
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
 
   return (
-    <button
-      type="button"
-      onClick={() => navigate(`/product/${product.id}`)}
-      className="product-card-shell group scroll-reveal overflow-hidden rounded-[28px] border border-blue-100 bg-white text-left shadow-[0_18px_50px_rgba(49,91,210,0.10)] transition duration-300 hover:-translate-y-2 hover:border-blue-300 hover:shadow-[0_24px_70px_rgba(49,91,210,0.16)] dark:border-white/10 dark:bg-white/8"
-    >
-      <div className="product-card-image-frame grid h-48 place-items-center bg-blue-50 dark:bg-white/10">
+    <button type="button" onClick={() => navigate(`/product/${product.id}`)} className="target-product-card group">
+      <div className="target-product-media">
         {product.image_url ? (
-          <img src={product.image_url} alt={product.name} className="product-card-fit-image h-full w-full object-contain p-8 drop-shadow-2xl transition duration-500 group-hover:scale-[1.03]" loading="lazy" />
+          <img src={product.image_url} alt={product.name} loading="lazy" />
         ) : (
-          <i className="fas fa-box-open text-5xl text-blue-300" aria-hidden="true"></i>
+          <i className="fas fa-box-open" aria-hidden="true"></i>
         )}
       </div>
-      <div className="p-5">
-        <span className="inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-bold uppercase text-blue-700 dark:bg-white/10 dark:text-blue-200">{product.category || 'Product'}</span>
-        <h3 className="mt-4 truncate text-lg font-black text-slate-950 dark:text-white">{product.name}</h3>
-        <div className="mt-4 text-2xl font-black text-blue-700 dark:text-blue-200">${Number(product.price || 0).toFixed(2)}</div>
+      <div className="target-product-body">
+        <span>{product.category || 'Marketplace'}</span>
+        <h3>{product.name}</h3>
+        <p>{product.description || 'Retail-ready product from the Tradelistic marketplace.'}</p>
+        <strong>${Number(product.price || 0).toFixed(2)}</strong>
       </div>
     </button>
   );
@@ -45,25 +49,45 @@ const Home = () => {
   const isImporter = isAuthenticated && userType !== 'exporter';
 
   useEffect(() => {
+    let active = true;
+    const previewTimer = window.setTimeout(() => {
+      if (!active) return;
+      setError('Live product data is still loading. Showing the retail shell for preview.');
+      setLoading(false);
+    }, 1600);
+
     const load = async () => {
       try {
         const response = await getAllProducts();
+        if (!active) return;
         setProducts(response.data.results || response.data || []);
+        setError('');
         if (isImporter) {
           const recs = await getRecommendations();
+          if (!active) return;
           setRecommendations(recs.data.recommendations || []);
         }
       } catch {
-        setError('Products are taking longer than expected to load.');
+        if (!active) return;
+        setError('Live product data is not connected right now. Showing the retail shell for preview.');
       } finally {
+        if (!active) return;
+        window.clearTimeout(previewTimer);
         setLoading(false);
       }
     };
 
     load();
+    return () => {
+      active = false;
+      window.clearTimeout(previewTimer);
+    };
   }, [isImporter]);
 
-  const featured = useMemo(() => products.slice(0, 4), [products]);
+  const featured = useMemo(() => products.slice(0, 8), [products]);
+  const heroProduct = featured[0];
+  const visibleProducts = featured.length ? featured : [];
+
   const slideRecommendations = (direction) => {
     const track = recommendationTrackRef.current;
     if (!track) return;
@@ -74,137 +98,138 @@ const Home = () => {
 
   if (loading) {
     return (
-      <main className="grid min-h-[70dvh] place-items-center px-4">
-        <div className="w-full max-w-3xl rounded-[36px] border border-blue-100 bg-white p-8 shadow-2xl shadow-blue-950/10 dark:border-white/10 dark:bg-white/8">
-          <div className="mb-8 flex items-center gap-4">
-            <span className="grid h-14 w-14 place-items-center rounded-3xl bg-blue-600 text-white">
-              <i className="fas fa-layer-group animate-pulse" aria-hidden="true"></i>
-            </span>
-            <div>
-              <div className="text-sm font-bold uppercase text-blue-700 dark:text-blue-200">TRADELISTIC</div>
-              <h1 className="text-3xl font-black text-slate-950 dark:text-white">Building your storefront</h1>
-            </div>
+      <main className="target-loader-page">
+        <section className="target-loader-card">
+          <span className="target-loader-logo">T</span>
+          <div>
+            <span>TRADELISTIC</span>
+            <h1>Preparing the marketplace</h1>
+            <p>Loading retail sections, seller tools and checkout surfaces.</p>
           </div>
-          <div className="h-3 overflow-hidden rounded-full bg-blue-50 dark:bg-white/10">
-            <span className="block h-full w-1/2 animate-[fresh-loader_1.2s_ease-in-out_infinite] rounded-full bg-blue-600"></span>
-          </div>
-        </div>
+          <div className="target-loader-bar"><span /></div>
+        </section>
       </main>
     );
   }
 
   return (
-    <main className="w-full px-4 py-8 dark:text-white md:px-8 lg:px-14">
-      <section className="mx-auto grid min-h-[calc(100dvh-120px)] max-w-[1480px] items-center gap-10 py-10 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="scroll-reveal">
-          <span className="inline-flex rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-bold uppercase text-blue-700 shadow-sm dark:border-white/10 dark:bg-white/8 dark:text-blue-200">Verified blue-market experience</span>
-          <h1 className="mt-6 max-w-3xl text-[clamp(3.3rem,8vw,8.2rem)] font-black leading-[0.9] text-slate-950 dark:text-white">
-            Trade smarter with a cleaner store.
-          </h1>
-          <p className="mt-7 max-w-2xl text-lg font-medium leading-8 text-slate-600 dark:text-blue-100">
-            A fresh product discovery experience for importers and exporters, rebuilt around clarity, fast search, calm blue surfaces and confident buying actions.
+    <main className="target-home">
+      <section className="target-hero">
+        <div className="target-hero-copy">
+          <span className="target-kicker">Welcome to Tradelistic</span>
+          <h1>Hot marketplace deals up to 15% off</h1>
+          <p>
+            Browse the newest products, compare trusted sellers, manage offers and checkout from a polished ecommerce storefront.
           </p>
-          {!isAuthenticated && (
-            <div className="mt-7 grid gap-3 sm:grid-cols-2">
-              <button type="button" onClick={() => navigate('/login?portal=importer')} className="group rounded-[28px] border border-blue-100 bg-white p-5 text-left shadow-xl shadow-blue-950/5 transition hover:-translate-y-1 hover:border-blue-300 dark:border-white/10 dark:bg-white/8">
-                <span className="grid h-14 w-14 place-items-center rounded-2xl bg-blue-50 text-xl text-blue-700 dark:bg-white/10 dark:text-blue-200"><i className="fas fa-bag-shopping"></i></span>
-                <strong className="mt-4 block text-2xl font-black text-slate-950 dark:text-white">Continue as Importer</strong>
-                <small className="mt-2 block text-sm font-semibold leading-6 text-slate-500 dark:text-blue-100">Login to browse, cart, pay demo and send offers.</small>
-              </button>
-              <button type="button" onClick={() => navigate('/login?portal=exporter')} className="group rounded-[28px] border border-blue-100 bg-white p-5 text-left shadow-xl shadow-blue-950/5 transition hover:-translate-y-1 hover:border-blue-300 dark:border-white/10 dark:bg-white/8">
-                <span className="grid h-14 w-14 place-items-center rounded-2xl bg-slate-950 text-xl text-white dark:bg-white dark:text-slate-950"><i className="fas fa-store"></i></span>
-                <strong className="mt-4 block text-2xl font-black text-slate-950 dark:text-white">Continue as Exporter</strong>
-                <small className="mt-2 block text-sm font-semibold leading-6 text-slate-500 dark:text-blue-100">Login to manage store, AI listings and buyer offers.</small>
-              </button>
-            </div>
-          )}
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/products" className="rounded-2xl bg-blue-600 px-6 py-4 text-sm font-black text-white no-underline shadow-xl shadow-blue-600/20 transition hover:-translate-y-1 hover:bg-blue-700 hover:text-white">Browse Products</Link>
-            {!isAuthenticated && <Link to="/signup" className="rounded-2xl border border-blue-100 bg-white px-6 py-4 text-sm font-black text-slate-950 no-underline transition hover:-translate-y-1 hover:text-blue-700 dark:border-white/10 dark:bg-white/8 dark:text-white">Create Account</Link>}
+          <div className="target-hero-actions">
+            <Link to="/products">Shop all products</Link>
+            {!isAuthenticated && <Link to="/signup">Create account</Link>}
           </div>
           {!isAuthenticated && (
-            <div className="mt-7 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-[28px] border border-blue-100 bg-white p-4 shadow-xl shadow-blue-950/5 dark:border-white/10 dark:bg-white/8">
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-blue-50 text-blue-700 dark:bg-white/10 dark:text-blue-200"><i className="fas fa-bag-shopping"></i></span>
-                <h3 className="mt-4 text-xl font-black text-slate-950 dark:text-white">Importer portal</h3>
-                <p className="mt-2 text-sm font-semibold leading-6 text-slate-500 dark:text-blue-100">Browse products, cart, demo checkout and send offers.</p>
-                <div className="mt-4 flex gap-2">
-                  <a href="/login?portal=importer" target="_blank" rel="noreferrer" className="flex-1 rounded-2xl bg-blue-600 px-4 py-3 text-center text-xs font-black text-white no-underline">Login</a>
-                  <a href="/signup?type=importer" target="_blank" rel="noreferrer" className="flex-1 rounded-2xl bg-blue-50 px-4 py-3 text-center text-xs font-black text-blue-700 no-underline dark:bg-white/10 dark:text-blue-200">Sign up</a>
-                </div>
-              </div>
-              <div className="rounded-[28px] border border-blue-100 bg-white p-4 shadow-xl shadow-blue-950/5 dark:border-white/10 dark:bg-white/8">
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-slate-950 text-white dark:bg-white dark:text-slate-950"><i className="fas fa-store"></i></span>
-                <h3 className="mt-4 text-xl font-black text-slate-950 dark:text-white">Exporter portal</h3>
-                <p className="mt-2 text-sm font-semibold leading-6 text-slate-500 dark:text-blue-100">Manage store, AI products, offers and seller dashboard.</p>
-                <div className="mt-4 flex gap-2">
-                  <a href="/login?portal=exporter" target="_blank" rel="noreferrer" className="flex-1 rounded-2xl bg-slate-950 px-4 py-3 text-center text-xs font-black text-white no-underline dark:bg-white dark:text-slate-950">Login</a>
-                  <a href="/signup?type=exporter" target="_blank" rel="noreferrer" className="flex-1 rounded-2xl bg-blue-50 px-4 py-3 text-center text-xs font-black text-blue-700 no-underline dark:bg-white/10 dark:text-blue-200">Sign up</a>
-                </div>
-              </div>
+            <div className="target-portal-row">
+              <button type="button" onClick={() => navigate('/login?portal=importer')}>
+                <i className="fas fa-bag-shopping" aria-hidden="true"></i>
+                <span>
+                  <strong>Importer portal</strong>
+                  <small>Cart, offers and demo payment</small>
+                </span>
+              </button>
+              <button type="button" onClick={() => navigate('/login?portal=exporter')}>
+                <i className="fas fa-store" aria-hidden="true"></i>
+                <span>
+                  <strong>Exporter portal</strong>
+                  <small>Store, products and analytics</small>
+                </span>
+              </button>
             </div>
           )}
         </div>
 
-        <div className="scroll-reveal rounded-[38px] border border-blue-100 bg-white p-4 shadow-2xl shadow-blue-950/10 dark:border-white/10 dark:bg-white/8">
-          <div className="grid min-h-[560px] grid-rows-[1fr_auto] overflow-hidden rounded-[30px] bg-blue-50 dark:bg-white/10">
-            <div className="grid place-items-center p-8">
-              {featured[0]?.image_url ? (
-                <img src={featured[0].image_url} alt={featured[0].name} className="max-h-[360px] w-full object-contain drop-shadow-2xl" />
-              ) : (
-                <i className="fas fa-box-open text-8xl text-blue-300" aria-hidden="true"></i>
-              )}
-            </div>
-            <div className="grid gap-3 bg-white/80 p-4 backdrop-blur dark:bg-slate-950/40">
-              {categories.map((category) => (
-                <button key={category.value} type="button" onClick={() => navigate(`/products?category=${category.value}`)} className="flex items-center justify-between rounded-3xl border border-blue-100 bg-white p-4 text-left transition hover:-translate-y-1 hover:border-blue-300 dark:border-white/10 dark:bg-white/8">
-                  <span className="flex items-center gap-3">
-                    <span className="grid h-11 w-11 place-items-center rounded-2xl bg-blue-50 text-blue-700 dark:bg-white/10 dark:text-blue-200">
-                      <i className={category.icon} aria-hidden="true"></i>
-                    </span>
-                    <span>
-                      <span className="block font-black text-slate-950 dark:text-white">{category.label}</span>
-                      <span className="block text-xs font-semibold text-slate-500 dark:text-blue-100">{category.copy}</span>
-                    </span>
-                  </span>
-                  <i className="fas fa-arrow-right text-blue-600 dark:text-blue-200" aria-hidden="true"></i>
-                </button>
-              ))}
-            </div>
+        <div className="target-hero-deal">
+          <div className="target-deal-badge">Weekly spotlight</div>
+          <div className="target-deal-product">
+            {heroProduct?.image_url ? (
+              <img src={heroProduct.image_url} alt={heroProduct.name} />
+            ) : (
+              <i className="fas fa-bag-shopping" aria-hidden="true"></i>
+            )}
+          </div>
+          <div className="target-deal-copy">
+            <span>{heroProduct?.category || 'Our first ecommerce showcase'}</span>
+            <h2>{heroProduct?.name || 'Premium storefront experience'}</h2>
+            <p>{heroProduct ? 'A featured product from your active catalog.' : 'Start the backend to fill this hero with live catalog products.'}</p>
+            <strong>{heroProduct ? `$${Number(heroProduct.price || 0).toFixed(2)}` : 'Live catalog preview'}</strong>
           </div>
         </div>
       </section>
 
-      {error && <div className="mx-auto mb-8 max-w-[1480px] rounded-3xl border border-blue-100 bg-white p-4 text-sm font-bold text-blue-700 dark:border-white/10 dark:bg-white/8 dark:text-blue-200">{error}</div>}
+      <div className="target-slider-dots" aria-hidden="true">
+        <span className="active"></span>
+        <span></span>
+        <span></span>
+      </div>
 
-      <section className="mx-auto max-w-[1480px] py-12">
-        <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
+      <section className="target-category-strip" aria-label="Shop by department">
+        {categories.map((category) => (
+          <button key={category.value} type="button" onClick={() => navigate(`/products?category=${category.value}`)}>
+            <i className={category.icon} aria-hidden="true"></i>
+            <span>
+              <strong>{category.label}</strong>
+              <small>{category.copy}</small>
+            </span>
+          </button>
+        ))}
+      </section>
+
+      <section className="target-deal-strip" aria-label="Marketplace benefits">
+        {demoDeals.map((deal) => (
+          <article key={deal.title}>
+            <i className={deal.icon} aria-hidden="true"></i>
+            <span>{deal.title}</span>
+            <strong>{deal.value}</strong>
+          </article>
+        ))}
+      </section>
+
+      {error && <div className="target-alert">{error}</div>}
+
+      <section className="target-section">
+        <div className="target-section-head">
           <div>
-            <span className="text-sm font-bold uppercase text-blue-700 dark:text-blue-200">Featured</span>
-            <h2 className="text-[clamp(2rem,4vw,4.8rem)] font-black leading-none text-slate-950 dark:text-white">Fresh arrivals</h2>
+            <span>Featured</span>
+            <h2>Top picks for your marketplace</h2>
           </div>
-          <button type="button" onClick={() => navigate('/products')} className="rounded-2xl bg-blue-600 px-5 py-3 text-sm font-black text-white shadow-lg shadow-blue-600/20">See all products</button>
+          <button type="button" onClick={() => navigate('/products')}>View all</button>
         </div>
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {featured.map((product) => <ProductCard key={product.id} product={product} />)}
-        </div>
+        {visibleProducts.length ? (
+          <div className="target-product-grid">
+            {visibleProducts.map((product) => <ProductCard key={product.id} product={product} />)}
+          </div>
+        ) : (
+          <div className="target-empty-retail">
+            <i className="fas fa-boxes-stacked" aria-hidden="true"></i>
+            <h3>Connect product data to fill this shelf</h3>
+            <p>The storefront layout is ready. Once the backend is running, products will populate this retail grid automatically.</p>
+            <button type="button" onClick={() => navigate('/products')}>Open product page</button>
+          </div>
+        )}
       </section>
 
       {isImporter && recommendations.length > 0 && (
-        <section className="mx-auto max-w-[1480px] py-12">
-          <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
+        <section className="target-section">
+          <div className="target-section-head">
             <div>
-              <span className="text-sm font-bold uppercase text-blue-700 dark:text-blue-200">Smart recommendations</span>
-              <h2 className="text-[clamp(2rem,4vw,4.8rem)] font-black leading-none text-slate-950 dark:text-white">Picked for your imports</h2>
+              <span>Recommended</span>
+              <h2>Picked for your imports</h2>
             </div>
           </div>
           <div className="recommendation-carousel-shell">
-            <div className="recommendation-carousel-actions recommendation-carousel-actions-left" aria-label="Previous recommendation control">
+            <div className="recommendation-carousel-actions recommendation-carousel-actions-left">
               <button type="button" onClick={() => slideRecommendations(-1)} aria-label="Previous recommendations">
                 <i className="fas fa-arrow-left" aria-hidden="true"></i>
               </button>
             </div>
-            <div className="recommendation-carousel-actions recommendation-carousel-actions-right" aria-label="Next recommendation control">
+            <div className="recommendation-carousel-actions recommendation-carousel-actions-right">
               <button type="button" onClick={() => slideRecommendations(1)} aria-label="Next recommendations">
                 <i className="fas fa-arrow-right" aria-hidden="true"></i>
               </button>
@@ -220,14 +245,13 @@ const Home = () => {
         </section>
       )}
 
-      <section className="mx-auto my-12 max-w-[1480px] rounded-[38px] border border-blue-100 bg-blue-600 p-8 text-white shadow-2xl shadow-blue-600/20 dark:border-white/10 lg:p-14">
-        <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div>
-            <h2 className="text-[clamp(2rem,4vw,4.6rem)] font-black leading-none">Ready for a cleaner trading flow?</h2>
-            <p className="mt-4 max-w-2xl text-base font-medium leading-7 text-blue-100">Search, compare, save, cart and checkout from one calm blue interface.</p>
-          </div>
-          <Link to="/products" className="fresh-inverse-cta rounded-2xl bg-white px-7 py-4 text-center text-sm font-black text-blue-700 no-underline transition hover:-translate-y-1 hover:text-blue-800">Start shopping</Link>
+      <section className="target-membership">
+        <div>
+          <span>Tradelistic Circle</span>
+          <h2>One platform for buying, selling and negotiating.</h2>
+          <p>Keep product discovery, offer management, seller dashboards and demo checkout in one clean retail-grade interface.</p>
         </div>
+        <Link to="/products">Start shopping</Link>
       </section>
     </main>
   );

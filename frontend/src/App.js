@@ -22,6 +22,7 @@ import SuperAdminLogin from './pages/SuperAdminLogin';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './styles/FreshFrontend.css';
+import './styles/RetailPlatform.css';
 
 function App() {
   return (

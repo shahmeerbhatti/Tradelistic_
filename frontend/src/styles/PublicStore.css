@@ -2,7 +2,7 @@
 
 .public-store-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8fffe 0%, #f0f9f8 100%);
+  background: linear-gradient(135deg, #f8fbff 0%, #f0f9f8 100%);
 }
 
 /* Loading State */
@@ -12,14 +12,14 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  color: #00C853;
+  color: #2f80ed;
 }
 
 .loading-spinner {
   width: 60px;
   height: 60px;
   border: 4px solid #e0f2f1;
-  border-top: 4px solid #00C853;
+  border-top: 4px solid #2f80ed;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 1.5rem;
@@ -60,7 +60,7 @@
 }
 
 .back-home-btn {
-  background: linear-gradient(135deg, #00C853 0%, #8df5b8 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #b9dcff 100%);
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -74,13 +74,13 @@
 
 .back-home-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(18, 153, 144, 0.3);
+  box-shadow: 0 8px 25px rgba(47, 128, 237, 0.3);
 }
 
 /* Modern Store Header */
 .modern-store-header {
   position: relative;
-  background: linear-gradient(135deg, #04632c 0%, #00C853 50%, #29e875 100%);
+  background: linear-gradient(135deg, #165ec4 0%, #2f80ed 50%, #65a8ff 100%);
   min-height: 320px;
   overflow: hidden;
   display: flex;
@@ -115,7 +115,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(15, 76, 117, 0.1) 0%, rgba(18, 153, 144, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(15, 76, 117, 0.1) 0%, rgba(47, 128, 237, 0.05) 100%);
 }
 
 .header-container {
@@ -496,7 +496,7 @@
 /* Products Section */
 .store-products-section {
   padding: 4rem 0;
-  background: linear-gradient(180deg, #f8fffe 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
   position: relative;
 }
 
@@ -507,7 +507,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, #00C853 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, #2f80ed 50%, transparent 100%);
 }
 
 .store-content {
@@ -536,9 +536,9 @@
   height: 2px;
   background: linear-gradient(90deg, 
     transparent 0%, 
-    #00C853 20%, 
-    #8df5b8 50%, 
-    #00C853 80%, 
+    #2f80ed 20%, 
+    #b9dcff 50%, 
+    #2f80ed 80%, 
     transparent 100%);
   border-radius: 1px;
 }
@@ -549,7 +549,7 @@
   color: #333;
   margin: 0;
   position: relative;
-  background: linear-gradient(135deg, #00C853 0%, #29e875 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #65a8ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -571,7 +571,7 @@
 .search-box i {
   position: absolute;
   left: 1rem;
-  color: #00C853;
+  color: #2f80ed;
   z-index: 1;
   font-size: 1rem;
 }
@@ -584,13 +584,13 @@
   width: 280px;
   transition: all 0.3s ease;
   background: white;
-  box-shadow: 0 2px 10px rgba(18, 153, 144, 0.1);
+  box-shadow: 0 2px 10px rgba(47, 128, 237, 0.1);
 }
 
 .search-box input:focus {
   outline: none;
-  border-color: #00C853;
-  box-shadow: 0 0 0 3px rgba(18, 153, 144, 0.1), 0 4px 15px rgba(18, 153, 144, 0.2);
+  border-color: #2f80ed;
+  box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.1), 0 4px 15px rgba(47, 128, 237, 0.2);
   transform: translateY(-1px);
 }
 
@@ -602,14 +602,14 @@
   background: white;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 10px rgba(18, 153, 144, 0.1);
+  box-shadow: 0 2px 10px rgba(47, 128, 237, 0.1);
   font-weight: 500;
 }
 
 .category-filter:focus {
   outline: none;
-  border-color: #00C853;
-  box-shadow: 0 0 0 3px rgba(18, 153, 144, 0.1), 0 4px 15px rgba(18, 153, 144, 0.2);
+  border-color: #2f80ed;
+  box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.1), 0 4px 15px rgba(47, 128, 237, 0.2);
   transform: translateY(-1px);
 }
 
@@ -619,7 +619,7 @@
   border-radius: 50px;
   padding: 0.3rem;
   border: 2px solid #e0f2f1;
-  box-shadow: 0 2px 10px rgba(18, 153, 144, 0.1);
+  box-shadow: 0 2px 10px rgba(47, 128, 237, 0.1);
 }
 
 .view-btn {
@@ -634,14 +634,14 @@
 }
 
 .view-btn.active {
-  background: linear-gradient(135deg, #00C853 0%, #8df5b8 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #b9dcff 100%);
   color: white;
-  box-shadow: 0 2px 8px rgba(18, 153, 144, 0.3);
+  box-shadow: 0 2px 8px rgba(47, 128, 237, 0.3);
 }
 
 .view-btn:hover:not(.active) {
-  background: rgba(18, 153, 144, 0.1);
-  color: #00C853;
+  background: rgba(47, 128, 237, 0.1);
+  color: #2f80ed;
 }
 
 /* Products Grid */
@@ -666,11 +666,11 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 
-    0 8px 32px rgba(18, 153, 144, 0.08),
+    0 8px 32px rgba(47, 128, 237, 0.08),
     0 2px 8px rgba(0, 0, 0, 0.04);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
-  border: 1px solid rgba(18, 153, 144, 0.1);
+  border: 1px solid rgba(47, 128, 237, 0.1);
   position: relative;
   overflow: hidden;
   height: 400px;
@@ -697,9 +697,9 @@
 .product-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 
-    0 20px 40px rgba(18, 153, 144, 0.15),
+    0 20px 40px rgba(47, 128, 237, 0.15),
     0 8px 16px rgba(0, 0, 0, 0.08);
-  border-color: rgba(18, 153, 144, 0.3);
+  border-color: rgba(47, 128, 237, 0.3);
 }
 
 .product-image {
@@ -707,7 +707,7 @@
   width: 100%;
   height: 260px;
   overflow: hidden;
-  background: linear-gradient(135deg, #f8fffe 0%, #e0f7fa 100%);
+  background: linear-gradient(135deg, #f8fbff 0%, #e0f7fa 100%);
   flex-shrink: 0;
 }
 
@@ -743,11 +743,11 @@
 .no-image {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #f8fffe 0%, #e0f7fa 100%);
+  background: linear-gradient(135deg, #f8fbff 0%, #e0f7fa 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #8df5b8;
+  color: #b9dcff;
   position: relative;
 }
 
@@ -756,7 +756,7 @@
   position: absolute;
   width: 50px;
   height: 50px;
-  border: 2px solid #8df5b8;
+  border: 2px solid #b9dcff;
   border-radius: 50%;
   animation: gentle-spin 3s linear infinite;
 }
@@ -778,7 +778,7 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(135deg, 
-    rgba(18, 153, 144, 0.95) 0%, 
+    rgba(47, 128, 237, 0.95) 0%, 
     rgba(144, 209, 202, 0.85) 100%);
   display: flex;
   align-items: center;
@@ -808,7 +808,7 @@
 
 .view-product:hover {
   background: white;
-  color: #00C853;
+  color: #2f80ed;
   transform: scale(1.05);
 }
 
@@ -854,7 +854,7 @@
 .product-price {
   font-size: 1.3rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #00C853 0%, #29e875 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #65a8ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -862,7 +862,7 @@
 }
 
 .product-category {
-  background: linear-gradient(135deg, #8df5b8 0%, #00C853 100%);
+  background: linear-gradient(135deg, #b9dcff 0%, #2f80ed 100%);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -870,7 +870,7 @@
   font-weight: 600;
   text-transform: capitalize;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 12px rgba(18, 153, 144, 0.2);
+  box-shadow: 0 4px 12px rgba(47, 128, 237, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -900,9 +900,9 @@
 .no-products {
   text-align: center;
   padding: 5rem 3rem;
-  background: linear-gradient(135deg, #f8fffe 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
   border-radius: 24px;
-  border: 2px dashed #8df5b8;
+  border: 2px dashed #b9dcff;
   position: relative;
   overflow: hidden;
   margin: 2rem 0;
@@ -915,7 +915,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(18, 153, 144, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(47, 128, 237, 0.05) 0%, transparent 70%);
   animation: gentle-pulse 4s ease-in-out infinite;
 }
 
@@ -926,7 +926,7 @@
 
 .no-products i {
   font-size: 5rem;
-  color: #8df5b8;
+  color: #b9dcff;
   margin-bottom: 2rem;
   position: relative;
   z-index: 1;
@@ -942,11 +942,11 @@
 .no-products h3 {
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
-  color: #00C853;
+  color: #2f80ed;
   font-weight: 700;
   position: relative;
   z-index: 1;
-  background: linear-gradient(135deg, #00C853 0%, #29e875 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #65a8ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

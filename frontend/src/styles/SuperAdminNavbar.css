@@ -6,7 +6,7 @@
   background: rgba(241, 251, 245, 0.82);
   border-bottom: 1px solid rgba(184, 255, 209, 0.78);
   backdrop-filter: blur(18px);
-  box-shadow: 0 14px 40px rgba(4, 99, 44, 0.08);
+  box-shadow: 0 14px 40px rgba(47, 128, 237, 0.08);
 }
 
 .super-admin-nav-container {
@@ -31,10 +31,10 @@
   height: 64px;
   place-items: center;
   border-radius: 22px;
-  background: #00C853;
+  background: #2f80ed;
   color: white;
   font-size: 26px;
-  box-shadow: 0 18px 34px rgba(4, 99, 44, 0.22);
+  box-shadow: 0 18px 34px rgba(47, 128, 237, 0.22);
   overflow: hidden;
 }
 
@@ -73,7 +73,7 @@
 .super-admin-nav-link,
 .super-admin-logout,
 .super-admin-profile {
-  border: 1px solid #ccefd9;
+  border: 1px solid #dce5f3;
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.8);
   color: #07112d;
@@ -93,8 +93,8 @@
 
 .super-admin-nav-link:hover,
 .super-admin-logout:hover {
-  border-color: #00C853;
-  color: #00C853;
+  border-color: #2f80ed;
+  color: #2f80ed;
 }
 
 .super-admin-profile {
@@ -109,8 +109,8 @@
   height: 42px;
   place-items: center;
   border-radius: 16px;
-  background: #e9f8ef;
-  color: #00C853;
+  background: #eaf3ff;
+  color: #2f80ed;
 }
 
 .super-admin-profile strong,

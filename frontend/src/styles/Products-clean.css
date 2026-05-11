@@ -44,14 +44,14 @@
 .category-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #00C853, #04632c);
+  background: linear-gradient(135deg, #2f80ed, #165ec4);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-size: 1.5rem;
-  box-shadow: 0 4px 15px rgba(18, 153, 144, 0.3);
+  box-shadow: 0 4px 15px rgba(47, 128, 237, 0.3);
 }
 
 .results-count {
@@ -69,7 +69,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #00C853, #04632c);
+  background: linear-gradient(135deg, #2f80ed, #165ec4);
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -77,13 +77,13 @@
   color: white;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(18, 153, 144, 0.3);
+  box-shadow: 0 4px 12px rgba(47, 128, 237, 0.3);
 }
 
 .filter-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(18, 153, 144, 0.4);
-  background: linear-gradient(135deg, #04632c, #085d56);
+  box-shadow: 0 6px 20px rgba(47, 128, 237, 0.4);
+  background: linear-gradient(135deg, #165ec4, #165ec4);
 }
 
 .filter-dropdown {
@@ -96,7 +96,7 @@
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   padding: 0;
   z-index: 1000;
-  border: 1px solid rgba(18, 153, 144, 0.1);
+  border: 1px solid rgba(47, 128, 237, 0.1);
   overflow: hidden;
 }
 
@@ -110,7 +110,7 @@
 }
 
 .filter-header h4 {
-  color: #00C853;
+  color: #2f80ed;
   font-size: 1.3rem;
   margin: 0;
   font-weight: 700;
@@ -121,7 +121,7 @@
 }
 
 .filter-header h4 i {
-  color: #00C853;
+  color: #2f80ed;
 }
 
 /* Price Input Section */
@@ -133,7 +133,7 @@
   padding: 1rem;
   background: linear-gradient(135deg, #f8fdfc, #f0f9f7);
   border-radius: 12px;
-  border: 2px solid rgba(18, 153, 144, 0.1);
+  border: 2px solid rgba(47, 128, 237, 0.1);
 }
 
 .price-input-wrapper {
@@ -157,7 +157,7 @@
 .currency-symbol {
   position: absolute;
   left: 0.75rem;
-  color: #00C853;
+  color: #2f80ed;
   font-weight: 700;
   font-size: 1rem;
   z-index: 1;
@@ -176,8 +176,8 @@
 }
 
 .price-input:focus {
-  border-color: #00C853;
-  box-shadow: 0 0 0 3px rgba(18, 153, 144, 0.1);
+  border-color: #2f80ed;
+  box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.1);
   transform: translateY(-1px);
 }
 
@@ -190,7 +190,7 @@
 }
 
 .price-separator span {
-  background: #00C853;
+  background: #2f80ed;
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
@@ -225,7 +225,7 @@
   top: 50%;
   transform: translateY(-50%);
   height: 6px;
-  background: linear-gradient(135deg, #00C853, #04632c);
+  background: linear-gradient(135deg, #2f80ed, #165ec4);
   border-radius: 3px;
   z-index: 2;
 }
@@ -257,34 +257,34 @@
   -webkit-appearance: none;
   width: 24px;
   height: 24px;
-  background: linear-gradient(135deg, #00C853, #04632c);
+  background: linear-gradient(135deg, #2f80ed, #165ec4);
   border-radius: 50%;
   cursor: pointer;
   border: 3px solid white;
-  box-shadow: 0 2px 10px rgba(18, 153, 144, 0.4);
+  box-shadow: 0 2px 10px rgba(47, 128, 237, 0.4);
   transition: all 0.2s ease;
   position: relative;
 }
 
 .range-slider::-webkit-slider-thumb:hover {
   transform: scale(1.2);
-  box-shadow: 0 4px 15px rgba(18, 153, 144, 0.6);
+  box-shadow: 0 4px 15px rgba(47, 128, 237, 0.6);
 }
 
 .range-slider::-webkit-slider-thumb:active {
   transform: scale(1.3);
-  box-shadow: 0 6px 20px rgba(18, 153, 144, 0.8);
+  box-shadow: 0 6px 20px rgba(47, 128, 237, 0.8);
 }
 
 /* Firefox Slider Thumb */
 .range-slider::-moz-range-thumb {
   width: 24px;
   height: 24px;
-  background: linear-gradient(135deg, #00C853, #04632c);
+  background: linear-gradient(135deg, #2f80ed, #165ec4);
   border-radius: 50%;
   cursor: pointer;
   border: 3px solid white;
-  box-shadow: 0 2px 10px rgba(18, 153, 144, 0.4);
+  box-shadow: 0 2px 10px rgba(47, 128, 237, 0.4);
   -moz-appearance: none;
   transition: all 0.2s ease;
 }
@@ -298,9 +298,9 @@
 .price-display {
   text-align: center;
   padding: 1rem;
-  background: rgba(18, 153, 144, 0.05);
+  background: rgba(47, 128, 237, 0.05);
   border-radius: 8px;
-  border: 1px solid rgba(18, 153, 144, 0.1);
+  border: 1px solid rgba(47, 128, 237, 0.1);
 }
 
 .price-range-text {
@@ -318,7 +318,7 @@
 .range-values {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #00C853;
+  color: #2f80ed;
 }
 
 /* Filter Actions */
@@ -350,9 +350,9 @@
 }
 
 .filter-button:hover {
-  border-color: #00C853;
-  color: #00C853;
-  box-shadow: 0 4px 8px rgba(18, 153, 144, 0.1);
+  border-color: #2f80ed;
+  color: #2f80ed;
+  box-shadow: 0 4px 8px rgba(47, 128, 237, 0.1);
 }
 
 .filter-dropdown {
@@ -365,7 +365,7 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   z-index: 1000;
-  border: 1px solid rgba(18, 153, 144, 0.1);
+  border: 1px solid rgba(47, 128, 237, 0.1);
 }
 
 .filter-section {
@@ -379,7 +379,7 @@
   font-size: 1.2rem;
   margin: 0;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid rgba(18, 153, 144, 0.1);
+  border-bottom: 2px solid rgba(47, 128, 237, 0.1);
   font-weight: 600;
 }
 
@@ -414,8 +414,8 @@
 }
 
 .price-input:focus {
-  border-color: #00C853;
-  box-shadow: 0 0 0 3px rgba(18, 153, 144, 0.1);
+  border-color: #2f80ed;
+  box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.1);
 }
 
 .price-separator {
@@ -449,7 +449,7 @@
 .slider-range {
   position: absolute;
   height: 6px;
-  background: linear-gradient(135deg, #00C853, #04632c);
+  background: linear-gradient(135deg, #2f80ed, #165ec4);
   border-radius: 3px;
   z-index: 1;
 }
@@ -480,7 +480,7 @@
   -webkit-appearance: none;
   width: 22px;
   height: 22px;
-  background: #00C853;
+  background: #2f80ed;
   border-radius: 50%;
   cursor: pointer;
   border: 3px solid white;
@@ -490,15 +490,15 @@
 
 .slider::-webkit-slider-thumb:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(18, 153, 144, 0.4);
-  background: #04632c;
+  box-shadow: 0 4px 12px rgba(47, 128, 237, 0.4);
+  background: #165ec4;
 }
 
 /* Firefox Slider Thumb */
 .slider::-moz-range-thumb {
   width: 22px;
   height: 22px;
-  background: #00C853;
+  background: #2f80ed;
   border-radius: 50%;
   cursor: pointer;
   border: 3px solid white;
@@ -523,7 +523,7 @@
 .current-range {
   font-size: 1rem;
   font-weight: 600;
-  color: #00C853;
+  color: #2f80ed;
 }
 
 /* Filter Actions */
@@ -537,7 +537,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #00C853, #04632c);
+  background: linear-gradient(135deg, #2f80ed, #165ec4);
   color: white;
   border: none;
   border-radius: 8px;
@@ -545,13 +545,13 @@
   font-size: 0.9rem;
   font-weight: 500;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(18, 153, 144, 0.2);
+  box-shadow: 0 2px 8px rgba(47, 128, 237, 0.2);
 }
 
 .reset-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(18, 153, 144, 0.3);
-  background: linear-gradient(135deg, #04632c, #085d56);
+  box-shadow: 0 4px 12px rgba(47, 128, 237, 0.3);
+  background: linear-gradient(135deg, #165ec4, #165ec4);
 }
 
 /* Products Grid */
@@ -625,7 +625,7 @@
 .product-price {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #00C853;
+  color: #2f80ed;
 }
 
 /* No Results */

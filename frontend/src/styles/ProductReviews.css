@@ -71,8 +71,8 @@
   align-items: center;
   gap: 6px;
   padding: 8px 12px;
-  background: rgba(18, 153, 144, 0.1);
-  color: #00C853;
+  background: rgba(47, 128, 237, 0.1);
+  color: #2f80ed;
   border-radius: 8px;
   font-size: 13px;
   font-weight: 500;
@@ -103,9 +103,9 @@
   display: inline-flex;
   width: fit-content;
   border-radius: 999px;
-  background: #e9f8ef;
+  background: #eaf3ff;
   padding: 7px 12px;
-  color: #00C853;
+  color: #2f80ed;
   font-size: 12px;
   font-weight: 900;
   text-transform: uppercase;
@@ -128,7 +128,7 @@
   width: 46px;
   height: 46px;
   place-items: center;
-  border: 1px solid #ccefd9;
+  border: 1px solid #dce5f3;
   border-radius: 16px;
   background: white;
   color: #b8c5d9;
@@ -147,7 +147,7 @@
 .review-form input,
 .review-form textarea {
   width: 100%;
-  border: 1px solid #ccefd9;
+  border: 1px solid #dce5f3;
   border-radius: 18px;
   background: white;
   color: #08112c;
@@ -164,8 +164,8 @@
 
 .review-form input:focus,
 .review-form textarea:focus {
-  border-color: #00C853;
-  box-shadow: 0 0 0 4px rgba(4, 99, 44, 0.12);
+  border-color: #2f80ed;
+  box-shadow: 0 0 0 4px rgba(47, 128, 237, 0.12);
 }
 
 .review-form button[type="submit"] {
@@ -175,12 +175,12 @@
   gap: 9px;
   border: 0;
   border-radius: 18px;
-  background: #00C853;
+  background: #2f80ed;
   color: white;
   cursor: pointer;
   font-weight: 900;
   padding: 15px 20px;
-  box-shadow: 0 16px 34px rgba(4, 99, 44, 0.22);
+  box-shadow: 0 16px 34px rgba(47, 128, 237, 0.22);
 }
 
 .review-form button[type="submit"]:disabled {
@@ -197,12 +197,12 @@
 }
 
 .review-locked i {
-  color: #00C853;
+  color: #2f80ed;
 }
 
 .review-submit-message {
   margin: 10px 0 0;
-  color: #00C853;
+  color: #2f80ed;
   font-size: 14px;
   font-weight: 800;
 }
@@ -225,9 +225,9 @@
 
 .review-item:hover {
   background: #f8fafc;
-  border-color: #00C853;
+  border-color: #2f80ed;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(18, 153, 144, 0.1);
+  box-shadow: 0 4px 12px rgba(47, 128, 237, 0.1);
 }
 
 .review-header {
@@ -272,7 +272,7 @@
   align-items: center;
   gap: 4px;
   font-size: 11px;
-  color: #00C853;
+  color: #2f80ed;
   font-weight: 500;
 }
 
@@ -360,9 +360,9 @@
 }
 
 .helpful-btn:hover {
-  background: rgba(18, 153, 144, 0.05);
-  border-color: #00C853;
-  color: #00C853;
+  background: rgba(47, 128, 237, 0.05);
+  border-color: #2f80ed;
+  color: #2f80ed;
 }
 
 .helpful-btn i {
@@ -410,15 +410,15 @@
 
 .pagination-btn:hover {
   background: #f8fafc;
-  border-color: #00C853;
-  color: #00C853;
+  border-color: #2f80ed;
+  color: #2f80ed;
 }
 
 .pagination-btn.active {
-  background: linear-gradient(135deg, #00C853 0%, #04632c 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #165ec4 100%);
   color: white;
-  border-color: #00C853;
-  box-shadow: 0 2px 8px rgba(18, 153, 144, 0.3);
+  border-color: #2f80ed;
+  box-shadow: 0 2px 8px rgba(47, 128, 237, 0.3);
 }
 
 .pagination-btn.prev-btn,
@@ -433,14 +433,14 @@
   align-items: center;
   justify-content: center;
   padding: 60px 20px;
-  color: #00C853;
+  color: #2f80ed;
 }
 
 .loading-spinner {
   width: 40px;
   height: 40px;
   border: 3px solid #e6fffa;
-  border-top: 3px solid #00C853;
+  border-top: 3px solid #2f80ed;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 16px;

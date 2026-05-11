@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: #00C853;
+  background: #2f80ed;
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -41,9 +41,9 @@
 }
 
 .continue-shopping-btn:hover {
-  background: #04632c;
+  background: #165ec4;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(18, 153, 144, 0.3);
+  box-shadow: 0 4px 12px rgba(47, 128, 237, 0.3);
 }
 
 .loading-state {
@@ -57,7 +57,7 @@
 
 .loading-state i {
   font-size: 2rem;
-  color: #00C853;
+  color: #2f80ed;
 }
 
 .loading-state p {
@@ -104,7 +104,7 @@
 }
 
 .shop-now-btn {
-  background: #00C853;
+  background: #2f80ed;
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -116,9 +116,9 @@
 }
 
 .shop-now-btn:hover {
-  background: #04632c;
+  background: #165ec4;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(18, 153, 144, 0.3);
+  box-shadow: 0 4px 12px rgba(47, 128, 237, 0.3);
 }
 
 .cart-content {
@@ -184,7 +184,7 @@
 }
 
 .item-name:hover {
-  color: #00C853;
+  color: #2f80ed;
 }
 
 .item-description {
@@ -200,7 +200,7 @@
 }
 
 .item-price {
-  color: #00C853;
+  color: #2f80ed;
   font-weight: 600;
   font-size: 1rem;
 }
@@ -215,7 +215,7 @@
 }
 
 .quantity-btn {
-  background: #00C853;
+  background: #2f80ed;
   color: white;
   border: none;
   width: 32px;
@@ -231,7 +231,7 @@
 }
 
 .quantity-btn:hover:not(:disabled) {
-  background: #04632c;
+  background: #165ec4;
   transform: scale(1.1);
 }
 
@@ -317,17 +317,17 @@
   font-size: 1.2rem;
   padding-top: 1rem;
   margin-top: 1rem;
-  border-top: 2px solid #00C853;
+  border-top: 2px solid #2f80ed;
 }
 
 .summary-row span:last-child {
-  color: #00C853;
+  color: #2f80ed;
   font-weight: 600;
 }
 
 .checkout-btn {
   width: 100%;
-  background: linear-gradient(135deg, #00C853 0%, #8df5b8 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #b9dcff 100%);
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -341,7 +341,7 @@
 
 .checkout-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(18, 153, 144, 0.3);
+  box-shadow: 0 6px 20px rgba(47, 128, 237, 0.3);
 }
 
 /* Responsive Design */

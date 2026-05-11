@@ -8,9 +8,9 @@
 /* Hero Section */
 .hero-section {
   background: linear-gradient(135deg, 
-    rgba(18, 153, 144, 0.08) 0%, 
+    rgba(47, 128, 237, 0.08) 0%, 
     rgba(144, 209, 202, 0.12) 35%, 
-    rgba(18, 153, 144, 0.06) 100%);
+    rgba(47, 128, 237, 0.06) 100%);
   padding: 3rem 2rem;
   text-align: center;
   border-radius: 24px;
@@ -18,7 +18,7 @@
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(18, 153, 144, 0.08);
+  border: 1px solid rgba(47, 128, 237, 0.08);
 }
 
 .hero-section::before {
@@ -50,7 +50,7 @@
 
 .hero-title {
   font-size: 3.2rem;
-  background: linear-gradient(135deg, #00C853 0%, #04632c 50%, #8df5b8 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #165ec4 50%, #b9dcff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -96,7 +96,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-  background: linear-gradient(135deg, #00C853 0%, #04632c 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #165ec4 100%);
   color: white;
   padding: 1.2rem 2.5rem;
   border-radius: 50px;
@@ -104,7 +104,7 @@
   font-weight: 600;
   font-size: 1.1rem;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 25px rgba(18, 153, 144, 0.25);
+  box-shadow: 0 8px 25px rgba(47, 128, 237, 0.25);
   position: relative;
   overflow: hidden;
   animation: buttonSlideUp 1.2s ease-out 0.4s both;
@@ -126,9 +126,9 @@
 }
 
 .cta-button:hover {
-  background: linear-gradient(135deg, #04632c 0%, #00C853 100%);
+  background: linear-gradient(135deg, #165ec4 0%, #2f80ed 100%);
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 12px 35px rgba(18, 153, 144, 0.35);
+  box-shadow: 0 12px 35px rgba(47, 128, 237, 0.35);
   text-decoration: none;
   color: white;
 }
@@ -161,7 +161,7 @@
 
 .section-title {
   font-size: 2rem;
-  color: #00C853;
+  color: #2f80ed;
   margin-bottom: 3rem;
   text-align: center;
   font-weight: 600;
@@ -187,14 +187,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(18, 153, 144, 0.1);
+  background: rgba(47, 128, 237, 0.1);
   border-radius: 50%;
   flex-shrink: 0;
 }
 
 .category-icon i {
   font-size: 1.4rem;
-  color: #00C853;
+  color: #2f80ed;
   display: block;
   line-height: 1;
 }
@@ -234,7 +234,7 @@
   background: white;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(18, 153, 144, 0.1);
+  box-shadow: 0 4px 12px rgba(47, 128, 237, 0.1);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
   display: flex;
@@ -262,14 +262,14 @@
 
 .product-card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 16px 32px rgba(18, 153, 144, 0.15);
+  box-shadow: 0 16px 32px rgba(47, 128, 237, 0.15);
 }
 
 .product-image {
   width: 100%;
   height: 200px;
   overflow: hidden;
-  background: linear-gradient(135deg, #f8fffe 0%, #e0f7fa 100%);
+  background: linear-gradient(135deg, #f8fbff 0%, #e0f7fa 100%);
   position: relative;
   flex-shrink: 0;
 }
@@ -291,11 +291,11 @@
 .no-image {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #f8fffe 0%, #e0f7fa 100%);
+  background: linear-gradient(135deg, #f8fbff 0%, #e0f7fa 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #8df5b8;
+  color: #b9dcff;
   font-size: 2.5rem;
   position: relative;
 }
@@ -305,7 +305,7 @@
   position: absolute;
   width: 50px;
   height: 50px;
-  border: 2px solid #8df5b8;
+  border: 2px solid #b9dcff;
   border-radius: 50%;
   animation: gentle-spin 3s linear infinite;
 }
@@ -326,7 +326,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #00C853;
+  background: #2f80ed;
   border: none;
   color: white;
   font-size: 1.2rem;
@@ -340,7 +340,7 @@
 }
 
 .slider-arrow:hover {
-  background: #04632c;
+  background: #165ec4;
   transform: translateY(-50%) scale(1.1);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
@@ -358,7 +358,7 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  background: #00C853;
+  background: #2f80ed;
   color: white;
   border: none;
   padding: 0.8rem 1.2rem;
@@ -374,7 +374,7 @@
 }
 
 .show-more-btn:hover {
-  background: #04632c;
+  background: #165ec4;
   transform: translateY(-50%) scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
@@ -416,7 +416,7 @@
 }
 
 .spinner-icon {
-  color: #00C853;
+  color: #2f80ed;
   font-size: 3.5rem;
   animation: spinnerRotate 1.5s linear infinite;
 }
@@ -428,7 +428,7 @@
 
 .loading-message {
   font-size: 1.2rem;
-  color: #00C853;
+  color: #2f80ed;
   font-weight: 600;
   margin-bottom: 1.5rem;
   min-height: 1.5rem;
@@ -450,7 +450,7 @@
 .loading-dots span {
   width: 8px;
   height: 8px;
-  background: linear-gradient(135deg, #00C853 0%, #8df5b8 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #b9dcff 100%);
   border-radius: 50%;
   animation: dotBounce 1.4s infinite ease-in-out both;
 }
@@ -538,7 +538,7 @@
 
 .feature-icon {
   font-size: 2.5rem;
-  color: #00C853;
+  color: #2f80ed;
   margin-bottom: 1rem;
 }
 
@@ -553,7 +553,7 @@
 
 /* Newsletter Section */
 .newsletter-section {
-  background: linear-gradient(135deg, #8df5b8 0%, #00C853 100%);
+  background: linear-gradient(135deg, #b9dcff 0%, #2f80ed 100%);
   padding: 4rem 0;
   margin: 3rem 0;
   border-radius: 12px;
@@ -588,7 +588,7 @@
 
 .newsletter-form button {
   background: white;
-  color: #00C853;
+  color: #2f80ed;
   border: none;
   padding: 1rem 2rem;
   border-radius: 25px;
@@ -630,7 +630,7 @@
 
 .benefit-icon {
   font-size: 2.5rem;
-  color: #00C853;
+  color: #2f80ed;
   margin-bottom: 1rem;
 }
 
@@ -645,7 +645,7 @@
 
 /* Trade Success Section */
 .trade-success-section {
-  background: linear-gradient(135deg, rgba(144, 209, 202, 0.1) 0%, rgba(18, 153, 144, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(144, 209, 202, 0.1) 0%, rgba(47, 128, 237, 0.1) 100%);
   padding: 4rem 0;
   margin: 3rem 0;
   border-radius: 12px;
@@ -660,7 +660,7 @@
 
 .success-content h2 {
   font-size: 2rem;
-  color: #00C853;
+  color: #2f80ed;
   margin-bottom: 1rem;
 }
 
@@ -671,7 +671,7 @@
 
 .success-cta {
   display: inline-block;
-  background: #00C853;
+  background: #2f80ed;
   color: white;
   padding: 1rem 2rem;
   border-radius: 30px;
@@ -681,7 +681,7 @@
 }
 
 .success-cta:hover {
-  background: #04632c;
+  background: #165ec4;
   transform: translateY(-2px);
 }
 
@@ -726,7 +726,7 @@ span.product-price,
 div.product-price {
   font-size: 1.1rem !important;
   font-weight: 700;
-  background: linear-gradient(135deg, #00C853 0%, #29e875 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #65a8ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1027,7 +1027,7 @@ div.product-price {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(18, 153, 144, 0.2) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(47, 128, 237, 0.2) 50%, transparent 100%);
 }
 
 .recommendations-section::after {
@@ -1037,7 +1037,7 @@ div.product-price {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(18, 153, 144, 0.2) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(47, 128, 237, 0.2) 50%, transparent 100%);
 }
 
 .recommendations-header {
@@ -1045,9 +1045,9 @@ div.product-price {
   margin-bottom: 1.5rem;
   padding: 1rem 1rem;
   background: linear-gradient(135deg, 
-    rgba(18, 153, 144, 0.03) 0%, 
+    rgba(47, 128, 237, 0.03) 0%, 
     rgba(144, 209, 202, 0.08) 50%, 
-    rgba(18, 153, 144, 0.03) 100%);
+    rgba(47, 128, 237, 0.03) 100%);
   border-radius: 16px;
   position: relative;
   overflow: hidden;
@@ -1060,7 +1060,7 @@ div.product-price {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(18, 153, 144, 0.05), transparent);
+  background: linear-gradient(90deg, transparent, rgba(47, 128, 237, 0.05), transparent);
   animation: headerShimmer 3s ease-in-out infinite;
 }
 
@@ -1072,7 +1072,7 @@ div.product-price {
 
 .recommendations-title {
   font-size: 1.8rem;
-  background: linear-gradient(135deg, #00C853 0%, #04632c 40%, #8df5b8 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #165ec4 40%, #b9dcff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1094,12 +1094,12 @@ div.product-price {
 }
 
 .recommended-product {
-  border: 2px solid rgba(18, 153, 144, 0.08);
-  background: linear-gradient(145deg, #ffffff 0%, #fafffe 100%);
+  border: 2px solid rgba(47, 128, 237, 0.08);
+  background: linear-gradient(145deg, #ffffff 0%, #f8fbff 100%);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(18, 153, 144, 0.08);
+  box-shadow: 0 4px 15px rgba(47, 128, 237, 0.08);
 }
 
 .recommended-product::before {
@@ -1109,7 +1109,7 @@ div.product-price {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #00C853, #8df5b8, #00C853);
+  background: linear-gradient(90deg, #2f80ed, #b9dcff, #2f80ed);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -1121,15 +1121,15 @@ div.product-price {
 
 .recommended-product:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(18, 153, 144, 0.2);
-  border-color: rgba(18, 153, 144, 0.15);
+  box-shadow: 0 15px 40px rgba(47, 128, 237, 0.2);
+  border-color: rgba(47, 128, 237, 0.15);
 }
 
 .recommendation-badge {
   position: absolute;
   top: 15px;
   right: 15px;
-  background: linear-gradient(135deg, #00C853 0%, #29e875 50%, #8df5b8 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #65a8ff 50%, #b9dcff 100%);
   color: white;
   padding: 6px 12px;
   border-radius: 20px;
@@ -1138,7 +1138,7 @@ div.product-price {
   text-transform: uppercase;
   letter-spacing: 0.8px;
   z-index: 2;
-  box-shadow: 0 4px 12px rgba(18, 153, 144, 0.3);
+  box-shadow: 0 4px 12px rgba(47, 128, 237, 0.3);
   animation: badgePulse 2s ease-in-out infinite;
   border: 2px solid rgba(255, 255, 255, 0.3);
 }
@@ -1146,17 +1146,17 @@ div.product-price {
 @keyframes badgePulse {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 4px 12px rgba(18, 153, 144, 0.3);
+    box-shadow: 0 4px 12px rgba(47, 128, 237, 0.3);
   }
   50% {
     transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(18, 153, 144, 0.4);
+    box-shadow: 0 6px 16px rgba(47, 128, 237, 0.4);
   }
 }
 
 .product-category-badge {
-  background: linear-gradient(135deg, rgba(18, 153, 144, 0.1) 0%, rgba(144, 209, 202, 0.1) 100%);
-  color: #00C853;
+  background: linear-gradient(135deg, rgba(47, 128, 237, 0.1) 0%, rgba(144, 209, 202, 0.1) 100%);
+  color: #2f80ed;
   padding: 4px 10px;
   border-radius: 15px;
   font-size: 10px;
@@ -1164,15 +1164,15 @@ div.product-price {
   font-weight: 700;
   margin-top: 6px;
   display: inline-block;
-  border: 1px solid rgba(18, 153, 144, 0.15);
+  border: 1px solid rgba(47, 128, 237, 0.15);
   letter-spacing: 0.3px;
   transition: all 0.3s ease;
 }
 
 .recommended-product:hover .product-category-badge {
-  background: linear-gradient(135deg, rgba(18, 153, 144, 0.15) 0%, rgba(144, 209, 202, 0.15) 100%);
+  background: linear-gradient(135deg, rgba(47, 128, 237, 0.15) 0%, rgba(144, 209, 202, 0.15) 100%);
   transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(18, 153, 144, 0.1);
+  box-shadow: 0 2px 8px rgba(47, 128, 237, 0.1);
 }
 
 

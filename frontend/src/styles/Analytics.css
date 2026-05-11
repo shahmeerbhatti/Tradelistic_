@@ -16,8 +16,8 @@
 .loading-spinner {
   width: 50px;
   height: 50px;
-  border: 4px solid rgba(18, 153, 144, 0.2);
-  border-top-color: #00C853;
+  border: 4px solid rgba(47, 128, 237, 0.2);
+  border-top-color: #2f80ed;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -38,7 +38,7 @@
 .analytics-error button {
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
-  background: #00C853;
+  background: #2f80ed;
   color: white;
   border: none;
   border-radius: 8px;
@@ -72,8 +72,8 @@
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   background: white;
-  color: #00C853;
-  border: 2px solid #00C853;
+  color: #2f80ed;
+  border: 2px solid #2f80ed;
   border-radius: 8px;
   cursor: pointer;
   font-size: 0.95rem;
@@ -83,7 +83,7 @@
 }
 
 .back-btn:hover {
-  background: #00C853;
+  background: #2f80ed;
   color: white;
   transform: translateX(-4px);
 }
@@ -127,7 +127,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #00C853, #29e875);
+  background: linear-gradient(90deg, #2f80ed, #65a8ff);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -139,7 +139,7 @@
 
 .summary-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(18, 153, 144, 0.15);
+  box-shadow: 0 8px 25px rgba(47, 128, 237, 0.15);
 }
 
 .summary-card .card-icon {
@@ -213,8 +213,8 @@
 }
 
 .tab-count {
-  background: rgba(18, 153, 144, 0.1);
-  color: #00C853;
+  background: rgba(47, 128, 237, 0.1);
+  color: #2f80ed;
   padding: 0.2rem 0.6rem;
   border-radius: 12px;
   font-size: 0.85rem;
@@ -222,14 +222,14 @@
 }
 
 .tab-btn:hover {
-  background: rgba(18, 153, 144, 0.05);
-  border-color: rgba(18, 153, 144, 0.2);
+  background: rgba(47, 128, 237, 0.05);
+  border-color: rgba(47, 128, 237, 0.2);
 }
 
 .tab-btn.active {
-  background: linear-gradient(135deg, #00C853 0%, #29e875 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #65a8ff 100%);
   color: white;
-  border-color: #00C853;
+  border-color: #2f80ed;
 }
 
 .tab-btn.active .tab-count {
@@ -256,7 +256,7 @@
 }
 
 .analytics-section h2 i {
-  color: #00C853;
+  color: #2f80ed;
 }
 
 .empty-state {
@@ -379,12 +379,12 @@
 }
 
 .item-user strong {
-  color: #00C853;
+  color: #2f80ed;
   font-weight: 600;
 }
 
 .item-product {
-  color: #00C853;
+  color: #2f80ed;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;

@@ -2,7 +2,7 @@
   min-height: 100vh;
   background:
     linear-gradient(180deg, rgba(232, 241, 255, 0.92), rgba(248, 251, 255, 0.96) 38%, rgba(241, 247, 255, 0.9)),
-    #f1fbf5;
+    #f4f7ff;
   color: #081126;
 }
 
@@ -37,10 +37,10 @@
   place-items: center;
   margin: 0 auto 18px;
   border-radius: 26px;
-  background: #00C853;
+  background: #2f80ed;
   color: #ffffff;
   font-size: 2rem;
-  box-shadow: 0 20px 40px rgba(4, 99, 44, 0.28);
+  box-shadow: 0 20px 40px rgba(47, 128, 237, 0.28);
   animation: loaderLift 1.7s ease-in-out infinite;
 }
 
@@ -66,11 +66,11 @@
   align-items: center;
   gap: 12px;
   margin-bottom: 18px;
-  border: 1px solid rgba(4, 99, 44, 0.18);
+  border: 1px solid rgba(47, 128, 237, 0.18);
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.9);
   padding: 14px 16px;
-  color: #04632c;
+  color: #165ec4;
   font-weight: 800;
 }
 
@@ -79,7 +79,7 @@
   border: 0;
   border-radius: 14px;
   background: #e8f0ff;
-  color: #04632c;
+  color: #165ec4;
   padding: 8px 12px;
   font-weight: 900;
 }
@@ -90,9 +90,9 @@
 .products-panel,
 .buyer-offers-panel,
 .seller-products-panel {
-  border: 1px solid rgba(4, 99, 44, 0.14);
+  border: 1px solid rgba(47, 128, 237, 0.14);
   background: rgba(255, 255, 255, 0.86);
-  box-shadow: 0 24px 70px rgba(4, 99, 44, 0.1);
+  box-shadow: 0 24px 70px rgba(47, 128, 237, 0.1);
 }
 
 .dashboard-hero {
@@ -109,8 +109,8 @@
   display: inline-flex;
   width: fit-content;
   border-radius: 999px;
-  background: #e9f8ef;
-  color: #04632c;
+  background: #eaf3ff;
+  color: #165ec4;
   padding: 7px 13px;
   font-size: 0.74rem;
   font-weight: 950;
@@ -148,9 +148,9 @@
 }
 
 .hero-panel button {
-  border: 1px solid rgba(4, 99, 44, 0.16);
+  border: 1px solid rgba(47, 128, 237, 0.16);
   background: #f5f9ff;
-  color: #04632c;
+  color: #165ec4;
 }
 
 .hero-panel button:hover,
@@ -163,7 +163,7 @@
   display: grid;
   gap: 12px;
   border-radius: 26px;
-  background: linear-gradient(180deg, #00C853, #04632c);
+  background: linear-gradient(180deg, #2f80ed, #165ec4);
   padding: 18px;
   color: #ffffff;
 }
@@ -214,8 +214,8 @@
   height: 44px;
   place-items: center;
   border-radius: 17px;
-  background: #e9f8ef;
-  color: #00C853;
+  background: #eaf3ff;
+  color: #2f80ed;
   font-size: 1.25rem;
 }
 
@@ -262,7 +262,7 @@
 .ai-product-tile,
 .seller-product-card {
   min-height: 330px;
-  border: 1px solid rgba(4, 99, 44, 0.13);
+  border: 1px solid rgba(47, 128, 237, 0.13);
   border-radius: 26px;
   background: #f8fbff;
   transition: transform 0.2s ease, border-color 0.2s ease;
@@ -274,7 +274,7 @@
   justify-items: center;
   gap: 12px;
   padding: 24px;
-  color: #04632c;
+  color: #165ec4;
   text-align: center;
 }
 
@@ -284,10 +284,10 @@
   height: 84px;
   place-items: center;
   border-radius: 28px;
-  background: #00C853;
+  background: #2f80ed;
   color: #ffffff;
   font-size: 2rem;
-  box-shadow: 0 20px 42px rgba(4, 99, 44, 0.24);
+  box-shadow: 0 20px 42px rgba(47, 128, 237, 0.24);
 }
 
 .ai-product-tile strong {
@@ -311,7 +311,7 @@
 .ai-product-tile:hover,
 .seller-product-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(4, 99, 44, 0.32);
+  border-color: rgba(47, 128, 237, 0.32);
 }
 
 .seller-product-image {
@@ -320,7 +320,7 @@
   aspect-ratio: 1 / 0.72;
   place-items: center;
   border: 0;
-  background: #e9f8ef;
+  background: #eaf3ff;
   color: #7ea0f2;
   font-size: 2rem;
 }
@@ -387,15 +387,15 @@
 }
 
 .seller-product-info div strong {
-  color: #04632c;
+  color: #165ec4;
   font-size: 1.18rem;
   font-weight: 950;
 }
 
 .seller-product-info div small {
   border-radius: 999px;
-  background: #e9f8ef;
-  color: #04632c;
+  background: #eaf3ff;
+  color: #165ec4;
   padding: 6px 9px;
   font-weight: 900;
   text-transform: capitalize;
@@ -412,13 +412,13 @@
   min-height: 40px;
   border: 0;
   border-radius: 14px;
-  background: #e9f8ef;
-  color: #04632c;
+  background: #eaf3ff;
+  color: #165ec4;
   font-weight: 950;
 }
 
 .seller-product-actions button:first-child {
-  background: #00C853;
+  background: #2f80ed;
   color: #ffffff;
 }
 
@@ -428,7 +428,7 @@
 }
 
 .panel-heading span {
-  color: #00C853;
+  color: #2f80ed;
   font-size: 0.75rem;
   font-weight: 950;
   text-transform: uppercase;
@@ -453,7 +453,7 @@
   align-items: center;
   gap: 14px;
   width: 100%;
-  border: 1px solid rgba(4, 99, 44, 0.12);
+  border: 1px solid rgba(47, 128, 237, 0.12);
   border-radius: 22px;
   background: #f8fbff;
   padding: 16px;
@@ -467,7 +467,7 @@
   place-items: center;
   flex: 0 0 auto;
   border-radius: 17px;
-  background: #00C853;
+  background: #2f80ed;
   color: #ffffff;
 }
 
@@ -493,8 +493,8 @@
   place-items: center;
   flex: 0 0 auto;
   border-radius: 15px;
-  background: #e9f8ef;
-  color: #00C853;
+  background: #eaf3ff;
+  color: #2f80ed;
   font-weight: 950;
 }
 
@@ -503,7 +503,7 @@
   display: grid;
   place-items: center;
   min-height: 210px;
-  border: 1px dashed rgba(4, 99, 44, 0.24);
+  border: 1px dashed rgba(47, 128, 237, 0.24);
   border-radius: 26px;
   background: #f8fbff;
   padding: 24px;
@@ -512,7 +512,7 @@
 
 .soft-empty i,
 .offers-empty-state i {
-  color: #8df5b8;
+  color: #b9dcff;
   font-size: 2rem;
 }
 
@@ -541,8 +541,8 @@
 
 .offer-stat-pills span {
   border-radius: 999px;
-  background: #e9f8ef;
-  color: #04632c;
+  background: #eaf3ff;
+  color: #165ec4;
   padding: 9px 12px;
   font-size: 0.78rem;
   font-weight: 950;
@@ -558,14 +558,14 @@
   grid-template-columns: minmax(240px, 1.45fr) 150px 150px minmax(220px, 1fr) 260px;
   gap: 12px;
   align-items: center;
-  border: 1px solid rgba(4, 99, 44, 0.12);
+  border: 1px solid rgba(47, 128, 237, 0.12);
   border-radius: 25px;
   background: #f8fbff;
   padding: 12px;
 }
 
 .offer-row.is-pending {
-  border-color: rgba(4, 99, 44, 0.28);
+  border-color: rgba(47, 128, 237, 0.28);
 }
 
 .offer-product-cell {
@@ -587,7 +587,7 @@
   flex: 0 0 auto;
   overflow: hidden;
   border-radius: 20px;
-  background: #e9f8ef;
+  background: #eaf3ff;
   color: #6d91ef;
 }
 
@@ -601,8 +601,8 @@
 .status-pill {
   display: inline-flex;
   border-radius: 999px;
-  background: #e9f8ef;
-  color: #04632c;
+  background: #eaf3ff;
+  color: #165ec4;
   padding: 5px 9px;
   font-size: 0.68rem;
   font-weight: 950;
@@ -646,7 +646,7 @@
 .offer-price-cell strong {
   display: block;
   margin-top: 5px;
-  color: #04632c;
+  color: #165ec4;
   font-size: 1.12rem;
   font-weight: 950;
 }
@@ -687,7 +687,7 @@
 
 .offer-action-cell .counter,
 .submit-decision.counter {
-  background: #00C853;
+  background: #2f80ed;
 }
 
 .offer-action-cell .reject,
@@ -698,8 +698,8 @@
 .locked-status {
   grid-column: 1 / -1;
   border-radius: 15px;
-  background: #e9f8ef;
-  color: #00C853;
+  background: #eaf3ff;
+  color: #2f80ed;
   padding: 12px;
   text-align: center;
   font-weight: 950;
@@ -720,7 +720,7 @@
 .offer-response-modal {
   position: relative;
   width: min(560px, 100%);
-  border: 1px solid rgba(4, 99, 44, 0.16);
+  border: 1px solid rgba(47, 128, 237, 0.16);
   border-radius: 34px;
   background: #ffffff;
   box-shadow: 0 34px 90px rgba(5, 12, 28, 0.26);
@@ -737,8 +737,8 @@
   place-items: center;
   border: 0;
   border-radius: 16px;
-  background: #e9f8ef;
-  color: #00C853;
+  background: #eaf3ff;
+  color: #2f80ed;
 }
 
 .offer-response-modal h2 {
@@ -766,9 +766,9 @@
 .offer-response-modal textarea {
   width: 100%;
   margin-top: 8px;
-  border: 1px solid rgba(4, 99, 44, 0.16);
+  border: 1px solid rgba(47, 128, 237, 0.16);
   border-radius: 18px;
-  background: #f1fbf5;
+  background: #f4f7ff;
   color: #081126;
   padding: 14px 16px;
   font-weight: 800;
@@ -777,8 +777,8 @@
 
 .offer-response-modal input:focus,
 .offer-response-modal textarea:focus {
-  border-color: #00C853;
-  box-shadow: 0 0 0 4px rgba(4, 99, 44, 0.1);
+  border-color: #2f80ed;
+  box-shadow: 0 0 0 4px rgba(47, 128, 237, 0.1);
 }
 
 .submit-decision {
@@ -802,8 +802,8 @@
   min-height: 52px;
   border: 0;
   border-radius: 18px;
-  background: #e9f8ef;
-  color: #04632c;
+  background: #eaf3ff;
+  color: #165ec4;
   font-weight: 950;
 }
 

@@ -1126,10 +1126,10 @@ textarea:focus-visible,
   --tl-paper: #fbfbff;
   --tl-card: #e8eaf4;
   --tl-line: rgba(31, 42, 68, 0.08);
-  --tl-blue: #00C853;
-  --tl-blue-dark: #04632c;
+  --tl-blue: #2f80ed;
+  --tl-blue-dark: #165ec4;
   --tl-blue-soft: #dfffe9;
-  --tl-accent: #00C853;
+  --tl-accent: #2f80ed;
   --tl-shadow-sm: 0 10px 24px rgba(33, 44, 82, 0.08);
   --tl-shadow-md: 0 18px 42px rgba(33, 44, 82, 0.12);
   --tl-shadow-lg: 0 28px 70px rgba(33, 44, 82, 0.16);

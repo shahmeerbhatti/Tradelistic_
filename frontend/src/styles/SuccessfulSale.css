@@ -25,9 +25,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #00C853 0%, #04632c 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #165ec4 100%);
   border-radius: 50%;
-  box-shadow: 0 8px 25px rgba(18, 153, 144, 0.3);
+  box-shadow: 0 8px 25px rgba(47, 128, 237, 0.3);
   animation: successPulse 2s ease-in-out;
 }
 
@@ -47,7 +47,7 @@
   font-weight: 800;
   color: #0f172a;
   margin: 0 0 10px 0;
-  background: linear-gradient(135deg, #00C853 0%, #04632c 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #165ec4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -71,7 +71,7 @@
 
 .bill-header {
   padding: 30px;
-  background: linear-gradient(135deg, #00C853 0%, #04632c 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #165ec4 100%);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -114,7 +114,7 @@
 
 .bill-divider {
   height: 2px;
-  background: linear-gradient(90deg, #00C853, #8df5b8, #00C853);
+  background: linear-gradient(90deg, #2f80ed, #b9dcff, #2f80ed);
   margin: 0;
 }
 
@@ -133,7 +133,7 @@
   font-weight: 700;
   color: #0f172a;
   margin: 0 0 20px 0;
-  border-bottom: 2px solid #8df5b8;
+  border-bottom: 2px solid #b9dcff;
   padding-bottom: 8px;
 }
 
@@ -204,8 +204,8 @@
 
 .product-meta .category {
   font-size: 12px;
-  color: #00C853;
-  background: rgba(18, 153, 144, 0.1);
+  color: #2f80ed;
+  background: rgba(47, 128, 237, 0.1);
   padding: 4px 8px;
   border-radius: 6px;
   font-weight: 500;
@@ -240,7 +240,7 @@
 }
 
 .sale-price {
-  color: #00C853;
+  color: #2f80ed;
   font-size: 16px;
   font-weight: 700;
 }
@@ -251,13 +251,13 @@
 }
 
 .grand-total {
-  border-top: 2px solid #00C853;
+  border-top: 2px solid #2f80ed;
   font-size: 18px;
   font-weight: 800;
 }
 
 .grand-total .price {
-  color: #00C853;
+  color: #2f80ed;
   font-size: 20px;
 }
 
@@ -280,7 +280,7 @@
 }
 
 .charge-item .price {
-  color: #00C853;
+  color: #2f80ed;
   font-weight: 600;
 }
 
@@ -338,14 +338,14 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #00C853 0%, #04632c 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #165ec4 100%);
   color: white;
-  box-shadow: 0 4px 12px rgba(18, 153, 144, 0.3);
+  box-shadow: 0 4px 12px rgba(47, 128, 237, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(18, 153, 144, 0.4);
+  box-shadow: 0 6px 20px rgba(47, 128, 237, 0.4);
 }
 
 .btn-secondary {
@@ -356,8 +356,8 @@
 
 .btn-secondary:hover {
   background: #f8fafc;
-  border-color: #00C853;
-  color: #00C853;
+  border-color: #2f80ed;
+  color: #2f80ed;
 }
 
 /* Footer Note */
@@ -399,7 +399,7 @@
   font-weight: 700;
   color: #0f172a;
   margin: 0 0 8px 0;
-  background: linear-gradient(135deg, #00C853 0%, #04632c 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #165ec4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -420,7 +420,7 @@
   max-width: 300px;
   margin: 0 auto;
   padding: 14px 24px;
-  background: linear-gradient(135deg, #00C853 0%, #04632c 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #165ec4 100%);
   color: white;
   border: none;
   border-radius: 10px;
@@ -428,12 +428,12 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(18, 153, 144, 0.3);
+  box-shadow: 0 4px 12px rgba(47, 128, 237, 0.3);
 }
 
 .btn-review:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(18, 153, 144, 0.4);
+  box-shadow: 0 6px 20px rgba(47, 128, 237, 0.4);
 }
 
 .review-form {
@@ -552,8 +552,8 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #00C853;
-  box-shadow: 0 0 0 3px rgba(18, 153, 144, 0.1);
+  border-color: #2f80ed;
+  box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.1);
 }
 
 .form-group small {
@@ -597,14 +597,14 @@
 }
 
 .btn-submit {
-  background: linear-gradient(135deg, #00C853 0%, #04632c 100%);
+  background: linear-gradient(135deg, #2f80ed 0%, #165ec4 100%);
   color: white;
-  box-shadow: 0 2px 8px rgba(18, 153, 144, 0.3);
+  box-shadow: 0 2px 8px rgba(47, 128, 237, 0.3);
 }
 
 .btn-submit:hover:not(:disabled) {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(18, 153, 144, 0.4);
+  box-shadow: 0 4px 12px rgba(47, 128, 237, 0.4);
 }
 
 .btn-submit:disabled,
@@ -662,14 +662,14 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  color: #00C853;
+  color: #2f80ed;
 }
 
 .loading-spinner {
   width: 50px;
   height: 50px;
   border: 4px solid #e6fffa;
-  border-top: 4px solid #00C853;
+  border-top: 4px solid #2f80ed;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 20px;
@@ -771,7 +771,7 @@
   font-weight: 700;
   color: #0f172a;
   margin-bottom: 20px;
-  border-bottom: 2px solid #00C853;
+  border-bottom: 2px solid #2f80ed;
   padding-bottom: 8px;
 }
 
@@ -780,20 +780,20 @@
   align-items: center;
   gap: 15px;
   padding: 15px;
-  background: #f8fffe;
+  background: #f8fbff;
   border-radius: 12px;
   margin-bottom: 12px;
-  border-left: 4px solid #00C853;
+  border-left: 4px solid #2f80ed;
   transition: all 0.3s ease;
 }
 
 .order-item:hover {
   transform: translateX(5px);
-  box-shadow: 0 4px 12px rgba(18, 153, 144, 0.15);
+  box-shadow: 0 4px 12px rgba(47, 128, 237, 0.15);
 }
 
 .order-number {
-  background: #00C853;
+  background: #2f80ed;
   color: white;
   width: 35px;
   height: 35px;
@@ -826,7 +826,7 @@
 
 .order-total {
   font-weight: 700;
-  color: #00C853;
+  color: #2f80ed;
   font-size: 16px;
 }
 
@@ -852,29 +852,29 @@
 }
 
 .continue-shopping-btn {
-  background: #00C853;
+  background: #2f80ed;
   color: white;
 }
 
 .continue-shopping-btn:hover {
-  background: #04632c;
+  background: #165ec4;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(18, 153, 144, 0.3);
+  box-shadow: 0 6px 20px rgba(47, 128, 237, 0.3);
   color: white;
   text-decoration: none;
 }
 
 .view-orders-btn {
   background: white;
-  color: #00C853;
-  border: 2px solid #00C853;
+  color: #2f80ed;
+  border: 2px solid #2f80ed;
 }
 
 .view-orders-btn:hover {
-  background: #f8fffe;
+  background: #f8fbff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(18, 153, 144, 0.15);
-  color: #04632c;
+  box-shadow: 0 6px 20px rgba(47, 128, 237, 0.15);
+  color: #165ec4;
   text-decoration: none;
 }
 

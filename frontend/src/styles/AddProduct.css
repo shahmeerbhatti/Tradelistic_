@@ -29,7 +29,7 @@
 
 .add-product-right {
   flex: 1;
-  background: linear-gradient(135deg, #8df5b8 0%, #00C853 50%, #04632c 100%);
+  background: linear-gradient(135deg, #b9dcff 0%, #2f80ed 50%, #165ec4 100%);
   padding: 3rem;
   display: flex;
   flex-direction: column;
@@ -58,7 +58,7 @@
 }
 
 .add-product-header h2 {
-  color: #00C853;
+  color: #2f80ed;
   font-size: 2rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
@@ -70,7 +70,7 @@
 }
 
 .add-product-form .form-label {
-  color: #04632c;
+  color: #165ec4;
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
@@ -83,7 +83,7 @@
 }
 
 .add-product-form .form-control:focus {
-  border-color: #8df5b8;
+  border-color: #b9dcff;
   box-shadow: 0 0 0 0.2rem rgba(144, 209, 202, 0.25);
 }
 
@@ -93,7 +93,7 @@
 }
 
 .submit-button {
-  background-color: #00C853;
+  background-color: #2f80ed;
   color: white;
   border: none;
   padding: 0.75rem;
@@ -106,12 +106,12 @@
 }
 
 .submit-button:hover {
-  background-color: #04632c;
+  background-color: #165ec4;
   transform: translateY(-1px);
 }
 
 .submit-button:disabled {
-  background-color: #8df5b8;
+  background-color: #b9dcff;
 }
 
 .image-preview {
@@ -191,7 +191,7 @@
   position: absolute;
   top: 0.5rem;
   left: 0.5rem;
-  background: rgba(18, 153, 144, 0.9);
+  background: rgba(47, 128, 237, 0.9);
   color: white;
   width: 24px;
   height: 24px;
@@ -267,10 +267,10 @@
   cursor: pointer;
   padding: 0.75rem 1.5rem;
   background-color: #f8f9fa;
-  border: 2px dashed #8df5b8;
+  border: 2px dashed #b9dcff;
   border-radius: 8px;
   font-weight: 500;
-  color: #00C853;
+  color: #2f80ed;
   transition: all 0.3s ease;
   margin-bottom: 1rem;
   margin-top: 1rem;
@@ -283,7 +283,7 @@
 
 .image-upload-label:hover {
   background-color: #e8f7f6;
-  border-color: #00C853;
+  border-color: #2f80ed;
   transform: translateY(-1px);
 }
 

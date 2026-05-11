@@ -5,7 +5,7 @@
   padding: 30px clamp(14px, 3vw, 48px);
   background:
     linear-gradient(180deg, rgba(232, 241, 255, 0.88), rgba(248, 251, 255, 0.96) 42%, rgba(241, 247, 255, 0.9)),
-    #f1fbf5;
+    #f4f7ff;
   color: #071126;
 }
 
@@ -18,10 +18,10 @@
 
 .seller-setup-loader {
   width: min(440px, 100%);
-  border: 1px solid rgba(4, 99, 44, 0.14);
+  border: 1px solid rgba(47, 128, 237, 0.14);
   border-radius: 34px;
   background: rgba(255, 255, 255, 0.88);
-  box-shadow: 0 28px 80px rgba(4, 99, 44, 0.14);
+  box-shadow: 0 28px 80px rgba(47, 128, 237, 0.14);
   padding: 34px;
   text-align: center;
 }
@@ -33,7 +33,7 @@
   place-items: center;
   margin: 0 auto 18px;
   border-radius: 26px;
-  background: #00C853;
+  background: #2f80ed;
   color: #ffffff;
   font-size: 2rem;
 }
@@ -55,10 +55,10 @@
   grid-template-columns: minmax(320px, 0.72fr) minmax(0, 1fr);
   width: min(1280px, 100%);
   overflow: hidden;
-  border: 1px solid rgba(4, 99, 44, 0.14);
+  border: 1px solid rgba(47, 128, 237, 0.14);
   border-radius: 38px;
   background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 30px 90px rgba(4, 99, 44, 0.16);
+  box-shadow: 0 30px 90px rgba(47, 128, 237, 0.16);
 }
 
 .seller-setup-hero {
@@ -68,7 +68,7 @@
   justify-content: space-between;
   min-height: 720px;
   padding: clamp(24px, 4vw, 42px);
-  background: #00C853;
+  background: #2f80ed;
   color: #ffffff;
 }
 
@@ -112,8 +112,8 @@
 }
 
 .seller-form .seller-kicker {
-  background: #e9f8ef;
-  color: #04632c;
+  background: #eaf3ff;
+  color: #165ec4;
 }
 
 .seller-setup-hero h1 {
@@ -189,9 +189,9 @@
 .seller-form textarea,
 .seller-form select {
   width: 100%;
-  border: 1px solid rgba(4, 99, 44, 0.16);
+  border: 1px solid rgba(47, 128, 237, 0.16);
   border-radius: 18px;
-  background: #f8fffb;
+  background: #f8fbff;
   color: #071126;
   padding: 15px 16px;
   font-weight: 850;
@@ -201,13 +201,13 @@
 .seller-form input:focus,
 .seller-form textarea:focus,
 .seller-form select:focus {
-  border-color: #00C853;
-  box-shadow: 0 0 0 4px rgba(4, 99, 44, 0.1);
+  border-color: #2f80ed;
+  box-shadow: 0 0 0 4px rgba(47, 128, 237, 0.1);
 }
 
 .seller-optional-panel {
   margin-top: 26px;
-  border: 1px solid rgba(4, 99, 44, 0.12);
+  border: 1px solid rgba(47, 128, 237, 0.12);
   border-radius: 26px;
   background: #f8fbff;
   padding: 18px;
@@ -241,10 +241,10 @@
   min-height: 132px;
   place-items: center;
   overflow: hidden;
-  border: 1px dashed rgba(4, 99, 44, 0.28);
+  border: 1px dashed rgba(47, 128, 237, 0.28);
   border-radius: 20px;
-  background: #e9f8ef;
-  color: #00C853;
+  background: #eaf3ff;
+  color: #2f80ed;
   font-size: 2rem;
 }
 
@@ -277,11 +277,11 @@
   min-height: 54px;
   border: 0;
   border-radius: 18px;
-  background: #00C853;
+  background: #2f80ed;
   color: #ffffff;
   padding: 0 18px;
   font-weight: 950;
-  box-shadow: 0 18px 36px rgba(4, 99, 44, 0.22);
+  box-shadow: 0 18px 36px rgba(47, 128, 237, 0.22);
 }
 
 .seller-form-actions .ai-submit {

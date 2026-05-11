@@ -70,12 +70,12 @@ const Login = () => {
   };
 
   return (
-    <main className="grid min-h-[calc(100dvh-88px)] place-items-center px-4 py-10 dark:text-white">
-      <section className="grid w-full max-w-6xl overflow-hidden rounded-[38px] border border-blue-100 bg-white shadow-2xl shadow-blue-950/10 dark:border-white/10 dark:bg-white/8 lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="p-6 md:p-10">
+    <main className="auth-page auth-login-page grid min-h-[calc(100dvh-88px)] place-items-center px-4 py-10 dark:text-white">
+      <section className="auth-shell grid w-full max-w-6xl overflow-hidden rounded-[38px] border border-blue-100 bg-white shadow-2xl shadow-blue-950/10 dark:border-white/10 dark:bg-white/8 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="auth-form-panel p-6 md:p-10">
           <span className="inline-flex rounded-full bg-blue-50 px-4 py-2 text-sm font-bold uppercase text-blue-700 dark:bg-white/10 dark:text-blue-200">{portal ? `${portal} portal` : 'Sign in'}</span>
           <h1 className="mt-5 text-[clamp(2.4rem,5vw,4.8rem)] font-black leading-none text-slate-950 dark:text-white">Welcome back.</h1>
-          <p className="mt-4 text-sm font-medium leading-7 text-slate-500 dark:text-blue-100">Continue managing products, carts and orders from a cleaner marketplace cockpit.</p>
+          <p className="mt-4 text-sm font-medium leading-7 text-slate-500 dark:text-blue-100">Sign in to browse deals, manage offers, checkout orders, or run your seller workspace.</p>
 
           {loginMessage && <div className="mt-5 rounded-2xl bg-blue-50 p-4 text-sm font-bold text-blue-700 dark:bg-white/10 dark:text-blue-200">{loginMessage}</div>}
           {error && <div className="mt-5 rounded-2xl bg-red-50 p-4 text-sm font-bold text-red-700">{error}</div>}
@@ -99,15 +99,15 @@ const Login = () => {
           </p>
         </div>
 
-        <div className="relative min-h-[360px] bg-blue-600 p-8 text-white md:p-10">
+        <div className="auth-visual-panel relative min-h-[360px] bg-blue-600 p-8 text-white md:p-10">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,.24),transparent_24rem)]"></div>
           <div className="relative flex h-full flex-col justify-between">
             <div className="grid h-16 w-16 place-items-center rounded-3xl bg-white/15 text-2xl">
               <i className="fas fa-layer-group" aria-hidden="true"></i>
             </div>
             <div>
-              <h2 className="text-[clamp(2rem,5vw,5rem)] font-black leading-none">Soft blue. Sharp workflow.</h2>
-              <p className="mt-5 max-w-lg text-sm font-medium leading-7 text-blue-100">A rebuilt front end for your FYP presentation, focused on clean commerce and readable product decisions.</p>
+              <h2 className="text-[clamp(2rem,5vw,5rem)] font-black leading-none">Retail-ready trade starts here.</h2>
+              <p className="mt-5 max-w-lg text-sm font-medium leading-7 text-blue-100">A modern buying and selling experience with clean cards, fast search, demo payments and seller tools.</p>
             </div>
           </div>
         </div>

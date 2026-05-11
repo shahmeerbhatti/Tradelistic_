@@ -14,12 +14,18 @@ const Navbar = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
   const [showUser, setShowUser] = useState(false);
+  const [showAuthMenu, setShowAuthMenu] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
   const [notifications, setNotifications] = useState([]);
   const [unreadCount, setUnreadCount] = useState(0);
   const [cartCount, setCartCount] = useState(0);
   const [isSearching, setIsSearching] = useState(false);
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = useState(() => {
+    const savedVersion = localStorage.getItem('theme_version');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedVersion !== 'retail-v2') return 'light';
+    return savedTheme === 'dark' ? 'dark' : 'light';
+  });
   const [isScrolled, setIsScrolled] = useState(false);
 
   const token = localStorage.getItem('token');
@@ -30,6 +36,7 @@ const Navbar = () => {
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
+    localStorage.setItem('theme_version', 'retail-v2');
   }, [theme]);
 
   useEffect(() => {
@@ -69,6 +76,7 @@ const Navbar = () => {
     setShowSearch(false);
     setShowCategories(false);
     setShowUser(false);
+    setShowAuthMenu(false);
     setShowNotifications(false);
     setSearch('');
   }, [location.pathname]);
@@ -402,9 +410,39 @@ const Navbar = () => {
               )}
             </div>
           ) : (
-            <Link to="/login" className="inline-flex h-11 items-center justify-center rounded-2xl bg-blue-600 px-5 text-sm font-bold text-white no-underline shadow-lg shadow-blue-600/20 transition hover:-translate-y-0.5 hover:text-white">
-              Sign in
-            </Link>
+            <div className="fresh-auth-dropdown-wrap">
+              <button
+                type="button"
+                className="inline-flex h-11 items-center justify-center rounded-2xl bg-blue-600 px-5 text-sm font-bold text-white no-underline shadow-lg shadow-blue-600/20 transition hover:-translate-y-0.5 hover:text-white"
+                onClick={() => setShowAuthMenu((value) => !value)}
+                aria-expanded={showAuthMenu}
+                aria-haspopup="menu"
+              >
+                Sign in
+              </button>
+
+              {showAuthMenu && (
+                <div className="fresh-auth-menu" role="menu" aria-label="Sign in options">
+                  <button type="button" role="menuitem" onClick={() => navigate('/login?portal=importer')}>
+                    <i className="fas fa-bag-shopping" aria-hidden="true"></i>
+                    <span>
+                      <strong>Sign in as Importer</strong>
+                      <small>Browse, cart, offers and checkout</small>
+                    </span>
+                  </button>
+                  <button type="button" role="menuitem" onClick={() => navigate('/login?portal=exporter')}>
+                    <i className="fas fa-store" aria-hidden="true"></i>
+                    <span>
+                      <strong>Sign in as Exporter</strong>
+                      <small>Store dashboard, products and sales</small>
+                    </span>
+                  </button>
+                  <Link to="/signup" role="menuitem">
+                    Create a new account
+                  </Link>
+                </div>
+              )}
+            </div>
           )}
         </div>
       </nav>
