@@ -1438,7 +1438,7 @@
 }
 
 .transactions-table {
-  min-width: 1360px;
+  min-width: 1120px;
 }
 
 .products-table th,
@@ -1547,44 +1547,90 @@
 
 .transactions-table th:nth-child(1),
 .transactions-table td:nth-child(1) {
-  width: 165px;
+  width: 135px;
 }
 
 .transactions-table th:nth-child(2),
 .transactions-table td:nth-child(2) {
-  width: 245px;
+  width: 230px;
 }
 
 .transactions-table th:nth-child(3),
 .transactions-table td:nth-child(3) {
-  width: 260px;
+  width: 250px;
 }
 
 .transactions-table th:nth-child(4),
 .transactions-table td:nth-child(4) {
-  width: 100px;
+  width: 78px;
   text-align: center;
 }
 
 .transactions-table th:nth-child(5),
-.transactions-table td:nth-child(5),
+.transactions-table td:nth-child(5) {
+  width: 120px;
+}
+
 .transactions-table th:nth-child(6),
-.transactions-table td:nth-child(6),
+.transactions-table td:nth-child(6) {
+  width: 135px;
+}
+
 .transactions-table th:nth-child(7),
 .transactions-table td:nth-child(7) {
-  width: 140px;
+  width: 125px;
 }
 
 .transactions-table th:nth-child(8),
 .transactions-table td:nth-child(8) {
-  width: 100px;
+  width: 78px;
   text-align: center;
 }
 
-.transactions-table td:nth-child(1) strong {
+.transaction-order-cell,
+.transaction-customer-cell,
+.transaction-product-cell,
+.transaction-amount-cell,
+.transaction-status-cell,
+.transaction-date-cell {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+}
+
+.transaction-order-cell strong,
+.transaction-customer-cell strong,
+.transaction-product-cell strong,
+.transaction-amount-cell strong,
+.transaction-date-cell strong {
   display: block;
-  max-width: 125px;
+  max-width: 100%;
   overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.transaction-customer-cell small,
+.transaction-product-cell small,
+.transaction-status-cell small,
+.transaction-date-cell small {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.transaction-customer-cell .badge,
+.transaction-status-cell .badge,
+.transactions-table td:nth-child(4) .badge {
+  width: fit-content;
+  max-width: 100%;
+  justify-self: start;
+  white-space: nowrap;
+}
+
+.transactions-table td:nth-child(4) .badge {
+  justify-self: center;
 }
 
 .transaction-stats {

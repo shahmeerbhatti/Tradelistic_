@@ -189,9 +189,27 @@ const ExporterDashboard = () => {
 
         <section className="dashboard-hero">
           <div className="hero-copy">
-            <span className="dashboard-kicker">Exporter workspace</span>
-            <h1>{userInfo.storeName}</h1>
-            <p>Manage catalog performance, buyer offers, and negotiation responses from one clean control room.</p>
+            <div className="dashboard-kicker-row">
+              <span className="dashboard-kicker">Exporter workspace</span>
+              <span className="dashboard-store-chip">
+                <i className="fas fa-store"></i>
+                {userInfo.storeName}
+              </span>
+            </div>
+            <div className="hero-store-stats" aria-label="Store stats">
+              <article>
+                <span><i className="fas fa-box-open"></i>Products</span>
+                <strong>{metrics.total_products || 0}</strong>
+              </article>
+              <article>
+                <span><i className="fas fa-bag-shopping"></i>Orders</span>
+                <strong>{metrics.total_orders || 0}</strong>
+              </article>
+              <article>
+                <span><i className="fas fa-eye"></i>Views</span>
+                <strong>{metrics.total_views || 0}</strong>
+              </article>
+            </div>
           </div>
 
           <div className="hero-panel">
@@ -208,29 +226,6 @@ const ExporterDashboard = () => {
               Refresh offers
             </button>
           </div>
-        </section>
-
-        <section className="metric-grid" aria-label="Exporter metrics">
-          <article className="metric-card">
-            <i className="fas fa-box-open"></i>
-            <span>Total products</span>
-            <strong>{metrics.total_products || 0}</strong>
-          </article>
-          <article className="metric-card">
-            <i className="fas fa-bag-shopping"></i>
-            <span>Total orders</span>
-            <strong>{metrics.total_orders || 0}</strong>
-          </article>
-          <article className="metric-card">
-            <i className="fas fa-eye"></i>
-            <span>Total views</span>
-            <strong>{metrics.total_views || 0}</strong>
-          </article>
-          <article className="metric-card">
-            <i className="fas fa-chart-line"></i>
-            <span>30 day views</span>
-            <strong>{metrics.recent_views_30_days || 0}</strong>
-          </article>
         </section>
 
         <section className="dashboard-grid">
@@ -252,6 +247,13 @@ const ExporterDashboard = () => {
                 <span>
                   <strong>Analytics</strong>
                   <small>Views, favorites, and sales</small>
+                </span>
+              </button>
+              <button type="button" onClick={() => navigate('/export-guide')}>
+                <i className="fas fa-passport"></i>
+                <span>
+                  <strong>Exporter Guide</strong>
+                  <small>Origin country filing readiness</small>
                 </span>
               </button>
               <button type="button" onClick={() => navigate('/exporter-store')}>

@@ -14,6 +14,7 @@ import ExporterDashboard from './pages/ExporterDashboard';
 import ExporterStore from './pages/ExporterStore';
 import EditProduct from './pages/EditProduct';
 import Analytics from './pages/Analytics';
+import ExportGuide from './pages/ExportGuide';
 import SuccessfulSale from './pages/SuccessfulSale';
 import Cart from './pages/Cart';
 import ImporterOffers from './pages/ImporterOffers';
@@ -63,6 +64,12 @@ function App() {
           <Route path="/analytics" element={
             <ExporterGuard>
               <Analytics />
+            </ExporterGuard>
+          } />
+
+          <Route path="/export-guide" element={
+            <ExporterGuard>
+              <ExportGuide />
             </ExporterGuard>
           } />
           

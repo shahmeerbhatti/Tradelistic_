@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'products',
     'stores',
     'transactions',
+    'export_guides',
 ]
 
 MIDDLEWARE = [

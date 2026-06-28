@@ -134,10 +134,6 @@ const ExporterHeader = ({ showBackButton = false, currentPage = 'Dashboard' }) =
         </div>
         
         <div className="exporter-header-center">
-          <div className="exporter-store-pill">
-            <i className="fas fa-store"></i>
-            <span>{userInfo.storeName}</span>
-          </div>
           <div className="exporter-workspace-nav" aria-label="Exporter workspace navigation">
             <button
               type="button"
@@ -156,6 +152,15 @@ const ExporterHeader = ({ showBackButton = false, currentPage = 'Dashboard' }) =
             >
               <i className="fas fa-store"></i>
               <span>My Store</span>
+            </button>
+            <button
+              type="button"
+              className={location.pathname === '/export-guide' ? 'active' : ''}
+              onClick={() => handleNavigation('/export-guide')}
+              title="View export compliance guide"
+            >
+              <i className="fas fa-passport"></i>
+              <span>Exporter Guide</span>
             </button>
             <button
               type="button"
@@ -227,7 +232,6 @@ const ExporterHeader = ({ showBackButton = false, currentPage = 'Dashboard' }) =
           
           <button onClick={handleLogout} className="logout-btn" title="Logout">
             <i className="fas fa-sign-out-alt"></i>
-            <span>Logout</span>
           </button>
         </div>
       </div>

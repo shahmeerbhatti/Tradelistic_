@@ -187,20 +187,20 @@ const ProductDetail = () => {
   }
 
   return (
-    <main className="w-full px-4 py-8 dark:text-white md:px-8 lg:px-14">
+    <main className="w-full px-4 py-5 dark:text-white md:px-8 lg:px-14">
       <section className="mx-auto max-w-[1480px]">
-        <button type="button" onClick={() => navigate('/products')} className="mb-5 rounded-2xl border border-blue-100 bg-white px-4 py-3 text-sm font-black text-slate-900 transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/8 dark:text-white">
+        <button type="button" onClick={() => navigate('/products')} className="mb-3 rounded-2xl border border-blue-100 bg-white px-4 py-3 text-sm font-black text-slate-900 transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/8 dark:text-white">
           <i className="fas fa-arrow-left mr-2" aria-hidden="true"></i>
           Back to products
         </button>
 
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,.75fr)]">
-          <div className="scroll-reveal rounded-[38px] border border-blue-100 bg-white p-4 shadow-2xl shadow-blue-950/10 dark:border-white/10 dark:bg-white/8">
-            <div className="grid min-h-[520px] place-items-center rounded-[30px] bg-blue-50 dark:bg-white/10">
+        <div className="grid items-stretch gap-5 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,.75fr)]">
+          <div className="scroll-reveal flex h-full min-h-[430px] rounded-[32px] border border-blue-100 bg-white p-4 shadow-2xl shadow-blue-950/10 dark:border-white/10 dark:bg-white/8">
+            <div className="grid min-h-0 flex-1 place-items-center overflow-hidden rounded-[26px] bg-blue-50 dark:bg-white/10">
               {images.length ? (
-                <img src={images[selectedImage]} alt={product.name} className="max-h-[480px] w-full object-contain p-8 drop-shadow-2xl" />
+                <img src={images[selectedImage]} alt={product.name} className="h-full max-h-[390px] w-full object-contain p-6 drop-shadow-xl" />
               ) : (
-                <i className="fas fa-box-open text-7xl text-blue-300" aria-hidden="true"></i>
+                <i className="fas fa-box-open text-5xl text-blue-300" aria-hidden="true"></i>
               )}
             </div>
             {images.length > 1 && (
@@ -214,34 +214,31 @@ const ProductDetail = () => {
             )}
           </div>
 
-          <aside className="scroll-reveal rounded-[38px] border border-blue-100 bg-white p-6 shadow-2xl shadow-blue-950/10 dark:border-white/10 dark:bg-white/8 lg:p-8">
-            <span className="inline-flex rounded-full bg-blue-50 px-4 py-2 text-xs font-black uppercase text-blue-700 dark:bg-white/10 dark:text-blue-200">{product.category || 'Product'}</span>
-            <h1 className="mt-5 text-[clamp(2.4rem,5vw,5.5rem)] font-black leading-[0.95] text-slate-950 dark:text-white">{product.name}</h1>
-            <div className="mt-6 text-5xl font-black text-blue-700 dark:text-blue-200">${price.toFixed(2)}</div>
-
-            {product.store_info && (
-              <button type="button" onClick={() => navigate(`/store/${product.store_info.id}`)} className="mt-6 flex w-full items-center justify-between rounded-3xl border border-blue-100 bg-blue-50 p-4 text-left dark:border-white/10 dark:bg-white/10">
-                <span>
-                  <span className="block text-xs font-bold uppercase text-slate-400 dark:text-blue-100">Sold by</span>
-                  <span className="block text-lg font-black text-slate-950 dark:text-white">{product.store_info.name}</span>
-                  <span className="block text-xs font-semibold text-slate-500 dark:text-blue-100">{product.store_info.business_type}</span>
-                </span>
-                <i className="fas fa-arrow-up-right-from-square text-blue-600 dark:text-blue-200" aria-hidden="true"></i>
+          <aside className="scroll-reveal min-h-[430px] rounded-[32px] border border-blue-100 bg-white p-5 shadow-2xl shadow-blue-950/10 dark:border-white/10 dark:bg-white/8 lg:p-6">
+            <div className="flex items-center justify-between gap-3">
+              <span className="inline-flex rounded-full bg-blue-50 px-4 py-2 text-xs font-black uppercase text-blue-700 dark:bg-white/10 dark:text-blue-200">{product.category || 'Product'}</span>
+              <button
+                type="button"
+                onClick={toggleFavorite}
+                disabled={busy === 'favorite'}
+                className="grid h-10 w-10 place-items-center rounded-2xl border border-blue-100 bg-white text-blue-700 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300 disabled:opacity-60 dark:border-white/10 dark:bg-white/10 dark:text-blue-200"
+                aria-label={isFavorite ? 'Remove from favorites' : 'Save to favorites'}
+              >
+                <i className={`${isFavorite ? 'fas' : 'far'} fa-heart`} aria-hidden="true"></i>
               </button>
-            )}
+            </div>
+            <h1 className="mt-3 text-[clamp(1.9rem,3.1vw,3.25rem)] font-black leading-[1.02] text-slate-950 dark:text-white">{product.name}</h1>
+            <div className="mt-3 text-3xl font-black text-blue-700 dark:text-blue-200">${price.toFixed(2)}</div>
 
-            <p className="mt-6 text-sm font-medium leading-7 text-slate-500 dark:text-blue-100">{product.description || 'No description available for this product.'}</p>
-
-            <div className="mt-7 flex items-center gap-3">
-              <span className="text-sm font-black text-slate-700 dark:text-blue-100">Quantity</span>
-              <div className="flex h-12 items-center overflow-hidden rounded-2xl border border-blue-100 bg-blue-50 dark:border-white/10 dark:bg-white/10">
-                <button type="button" onClick={() => setQuantity(Math.max(1, quantity - 1))} className="h-full w-12 text-lg font-black text-blue-700 dark:text-blue-200">-</button>
-                <input value={quantity} onChange={(e) => setQuantity(Math.max(1, Number(e.target.value) || 1))} className="h-full w-16 bg-transparent text-center text-sm font-black text-slate-950 outline-none dark:text-white" type="number" min="1" />
-                <button type="button" onClick={() => setQuantity(quantity + 1)} className="h-full w-12 text-lg font-black text-blue-700 dark:text-blue-200">+</button>
+            <div className="mt-5 flex justify-start">
+              <div className="inline-flex h-10 items-center overflow-hidden rounded-xl border border-blue-100 bg-white shadow-sm dark:border-white/10 dark:bg-white/10" aria-label="Quantity selector">
+                <button type="button" onClick={() => setQuantity(Math.max(1, quantity - 1))} className="grid h-full w-10 place-items-center text-sm font-black text-blue-700 transition hover:bg-blue-50 dark:text-blue-200 dark:hover:bg-white/10" aria-label="Decrease quantity">-</button>
+                <input value={quantity} onChange={(e) => setQuantity(Math.max(1, Number(e.target.value) || 1))} className="h-full w-12 border-x border-blue-100 bg-transparent text-center text-sm font-black text-slate-950 outline-none dark:border-white/10 dark:text-white" type="number" min="1" aria-label="Quantity" />
+                <button type="button" onClick={() => setQuantity(quantity + 1)} className="grid h-full w-10 place-items-center text-sm font-black text-blue-700 transition hover:bg-blue-50 dark:text-blue-200 dark:hover:bg-white/10" aria-label="Increase quantity">+</button>
               </div>
             </div>
 
-            <div className="mt-7 grid gap-3 sm:grid-cols-2">
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
               <button type="button" onClick={handleCart} disabled={busy === 'cart'} className="h-14 rounded-2xl bg-blue-600 text-sm font-black text-white shadow-xl shadow-blue-600/20 transition hover:-translate-y-1 disabled:opacity-60">
                 {busy === 'cart' ? 'Adding...' : 'Add to cart'}
               </button>
@@ -254,10 +251,21 @@ const ProductDetail = () => {
                   Make price offer
                 </button>
               )}
-              <button type="button" onClick={toggleFavorite} disabled={busy === 'favorite'} className="h-14 rounded-2xl border border-blue-100 bg-blue-50 text-sm font-black text-blue-700 transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/10 dark:text-blue-200 sm:col-span-2">
-                <i className={`${isFavorite ? 'fas' : 'far'} fa-heart mr-2`} aria-hidden="true"></i>
-                {isFavorite ? 'Saved' : 'Save to favorites'}
-              </button>
+            </div>
+
+            <div className="mt-5 border-t border-blue-100 pt-4 dark:border-white/10">
+              {product.store_info && (
+                <button type="button" onClick={() => navigate(`/store/${product.store_info.id}`)} className="flex w-full items-center justify-between rounded-3xl border border-blue-100 bg-blue-50 p-4 text-left dark:border-white/10 dark:bg-white/10">
+                  <span>
+                    <span className="block text-xs font-bold uppercase text-slate-400 dark:text-blue-100">Sold by</span>
+                    <span className="block text-base font-black text-slate-950 dark:text-white">{product.store_info.name}</span>
+                    <span className="block text-xs font-semibold text-slate-500 dark:text-blue-100">{product.store_info.business_type}</span>
+                  </span>
+                  <i className="fas fa-arrow-up-right-from-square text-blue-600 dark:text-blue-200" aria-hidden="true"></i>
+                </button>
+              )}
+
+              <p className="mt-4 text-sm font-medium leading-6 text-slate-500 dark:text-blue-100">{product.description || 'No description available for this product.'}</p>
             </div>
           </aside>
         </div>

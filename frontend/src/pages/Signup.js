@@ -18,6 +18,27 @@ const Signup = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const formatSignupError = (data) => {
+    if (!data) return 'Failed to create account. Please try again.';
+    if (typeof data === 'string') return data;
+    if (Array.isArray(data)) return data.join('\n');
+    if (typeof data === 'object') {
+      if (typeof data.error === 'string') return data.error;
+      if (typeof data.detail === 'string') return data.detail;
+      return Object.entries(data)
+        .map(([key, value]) => {
+          const message = Array.isArray(value)
+            ? value.join(', ')
+            : typeof value === 'object'
+              ? JSON.stringify(value)
+              : String(value);
+          return `${key}: ${message}`;
+        })
+        .join('\n');
+    }
+    return 'Failed to create account. Please try again.';
+  };
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((current) => ({
@@ -47,7 +68,7 @@ const Signup = () => {
       navigate(`/login?portal=${payload.user_type}`);
     } catch (err) {
       if (err.response?.data) {
-        setError(Object.entries(err.response.data).map(([key, value]) => `${key}: ${Array.isArray(value) ? value.join(', ') : value}`).join('\n'));
+        setError(formatSignupError(err.response.data));
       } else {
         setError('Failed to create account. Please try again.');
       }

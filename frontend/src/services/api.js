@@ -197,6 +197,11 @@ export const markNotificationRead = (notificationId = 'all') => api.post('/produ
 // Recommendations API
 export const getRecommendations = () => api.get('/products/recommendations/');
 
+// Exporter Guide API
+export const getExportGuideCountries = () => api.get('/exporter-guides/countries');
+export const getExportGuide = (exporterCountryCode) => api.get(`/exporter-guides/${exporterCountryCode}`);
+export const getExportGuideReadiness = (exporterCountryCode) => api.get(`/exporter-guides/${exporterCountryCode}/readiness`);
+
 // Super Admin API functions
 export const getAdminDashboard = () => api.get('/users/admin/dashboard/');
 export const getAdminUsers = (filters = {}) => {
@@ -209,6 +214,7 @@ export const getAdminUsers = (filters = {}) => {
 export const toggleUserStatus = (userId) => api.patch(`/users/admin/users/${userId}/toggle-status/`);
 export const getPendingExporters = () => api.get('/users/admin/pending-exporters/');
 export const approveExporter = (userId) => api.post(`/users/admin/approve-exporter/${userId}/`);
+export const rejectExporter = (userId) => api.post(`/users/admin/reject-exporter/${userId}/`);
 
 // Admin Transaction & Analytics API
 export const getAdminTransactions = () => api.get('/transactions/admin/sales/');

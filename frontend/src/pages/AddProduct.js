@@ -163,17 +163,17 @@ const AddProduct = () => {
   return (
     <>
       <ExporterHeader showBackButton currentPage="Add Product" />
-      <main className="min-h-[calc(100dvh-72px)] bg-[#f3f7ff] px-4 py-8 dark:bg-slate-950 md:px-8 lg:px-14">
+      <main className="min-h-[calc(100dvh-72px)] bg-[#f3f7ff] px-4 py-5 dark:bg-slate-950 md:px-8 lg:px-14">
         <section className="mx-auto grid max-w-[1480px] gap-6 lg:grid-cols-[minmax(0,1fr)_420px]">
-          <form onSubmit={handleSubmit} className="rounded-[38px] border border-blue-100 bg-white p-6 shadow-2xl shadow-blue-950/10 dark:border-white/10 dark:bg-white/8 lg:p-8">
-            <span className="inline-flex rounded-full bg-blue-50 px-4 py-2 text-sm font-black uppercase text-blue-700 dark:bg-white/10 dark:text-blue-200">Exporter listing</span>
-            <h1 className="mt-5 text-[clamp(2.6rem,6vw,5.8rem)] font-black leading-none text-slate-950 dark:text-white">Add product</h1>
-            <p className="mt-3 max-w-2xl text-sm font-semibold leading-6 text-slate-500 dark:text-blue-100">Upload images first, run AI Autofill, then polish title and description before publishing.</p>
+          <form onSubmit={handleSubmit} className="rounded-[30px] border border-blue-100 bg-white p-5 shadow-xl shadow-blue-950/5 dark:border-white/10 dark:bg-white/8 lg:p-6">
+            <span className="inline-flex rounded-full bg-blue-50 px-3 py-1.5 text-xs font-black uppercase text-blue-700 dark:bg-white/10 dark:text-blue-200">Exporter listing</span>
+            <h1 className="mt-3 text-[clamp(2rem,3.8vw,3.8rem)] font-black leading-none text-slate-950 dark:text-white">Add product</h1>
+            <p className="mt-2 max-w-2xl text-sm font-semibold leading-5 text-slate-500 dark:text-blue-100">Upload images, use AI Autofill, then publish a polished listing.</p>
 
             {error && <div className="mt-5 rounded-2xl bg-red-50 p-4 text-sm font-black text-red-700">{error}</div>}
             {aiMessage && <div className="mt-5 rounded-2xl bg-blue-50 p-4 text-sm font-black text-blue-700 dark:bg-white/10 dark:text-blue-200">{aiMessage}</div>}
 
-            <div className="mt-7 grid gap-5">
+            <div className="mt-5 grid gap-5">
               <label className="text-sm font-black text-slate-700 dark:text-blue-100">
                 Product title
                 <input value={formData.name} onChange={(event) => updateField('name', event.target.value)} required className="mt-2 h-14 w-full rounded-2xl border border-blue-100 bg-blue-50 px-4 text-base font-bold text-slate-950 outline-none focus:border-blue-400 dark:border-white/10 dark:bg-white/10 dark:text-white" />

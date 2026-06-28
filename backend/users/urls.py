@@ -3,7 +3,7 @@ from rest_framework.routers import DefaultRouter
 from .views import (
     SignupViewSet, CustomTokenObtainPairView, get_reviewers,
     admin_dashboard, admin_list_users, admin_toggle_user_status,
-    admin_pending_exporters, admin_approve_exporter
+    admin_pending_exporters, admin_approve_exporter, admin_reject_exporter
 )
 from rest_framework_simplejwt.views import TokenRefreshView
 
@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/users/<int:user_id>/toggle-status/', admin_toggle_user_status, name='admin_toggle_user_status'),
     path('admin/pending-exporters/', admin_pending_exporters, name='admin_pending_exporters'),
     path('admin/approve-exporter/<int:user_id>/', admin_approve_exporter, name='admin_approve_exporter'),
+    path('admin/reject-exporter/<int:user_id>/', admin_reject_exporter, name='admin_reject_exporter'),
 ]

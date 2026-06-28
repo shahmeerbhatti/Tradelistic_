@@ -2013,20 +2013,29 @@ class ProductViewSet(viewsets.ModelViewSet):
 
             now = timezone.now()
             recent_cutoff = now - timedelta(days=14)
+            intent_cutoff = now - timedelta(minutes=30)
             category_weights = Counter()
             subcategory_weights = Counter()
+            recent_category_weights = Counter()
+            recent_subcategory_weights = Counter()
             product_weights = Counter()
             exporter_weights = Counter()
             price_samples = []
 
-            def add_signal(product, weight):
+            def add_signal(product, weight, occurred_at=None):
                 if not product:
                     return
+                if occurred_at and occurred_at >= recent_cutoff:
+                    weight = int(round(weight * 1.6))
                 product_weights[product.id] += weight
                 if product.category:
                     category_weights[product.category] += weight
+                    if occurred_at and occurred_at >= intent_cutoff:
+                        recent_category_weights[product.category] += weight
                 if product.category and product.subcategory:
                     subcategory_weights[(product.category, product.subcategory)] += weight
+                    if occurred_at and occurred_at >= intent_cutoff:
+                        recent_subcategory_weights[(product.category, product.subcategory)] += weight
                 if product.owner_id:
                     exporter_weights[product.owner_id] += max(1, weight // 2)
                 if product.price:
@@ -2034,19 +2043,21 @@ class ProductViewSet(viewsets.ModelViewSet):
 
             view_rows = ProductView.objects.filter(user=user).select_related('product', 'product__owner').order_by('-viewed_at')[:160]
             for view in view_rows:
-                add_signal(view.product, 2 if view.viewed_at >= recent_cutoff else 1)
+                add_signal(view.product, 2 if view.viewed_at >= recent_cutoff else 1, view.viewed_at)
 
             favorite_rows = Favorite.objects.filter(user=user).select_related('product', 'product__owner').order_by('-created_at')[:80]
             for favorite in favorite_rows:
-                add_signal(favorite.product, 5)
+                add_signal(favorite.product, 7, favorite.created_at)
 
             purchase_rows = Sale.objects.filter(customer=user).select_related('product', 'product__owner').order_by('-created_at')[:80]
             for sale in purchase_rows:
-                add_signal(sale.product, min(18, 8 + int(sale.quantity or 1)))
+                # A purchase is a strong intent signal, but bulk quantity should not
+                # permanently dominate the user's category profile.
+                add_signal(sale.product, 12, sale.created_at)
 
             review_rows = Review.objects.filter(user=user, is_approved=True).select_related('product', 'product__owner').order_by('-created_at')[:80]
             for review in review_rows:
-                add_signal(review.product, int(review.rating or 3) + 3)
+                add_signal(review.product, int(review.rating or 3) + 3, review.created_at)
 
             offer_rows = ProductOffer.objects.filter(importer=user).select_related('product', 'product__owner').order_by('-updated_at')[:80]
             offer_status_weight = {
@@ -2057,7 +2068,7 @@ class ProductViewSet(viewsets.ModelViewSet):
                 'paid': 10,
             }
             for offer in offer_rows:
-                add_signal(offer.product, offer_status_weight.get(offer.status, 3))
+                add_signal(offer.product, offer_status_weight.get(offer.status, 3), offer.updated_at)
 
             interacted_products = set(product_weights.keys())
             avg_price = sum(price_samples) / len(price_samples) if price_samples else None
@@ -2090,7 +2101,20 @@ class ProductViewSet(viewsets.ModelViewSet):
                 preference_score = 0.0
                 preference_score += category_weights.get(product.category, 0) * 3.0
                 preference_score += subcategory_weights.get((product.category, product.subcategory), 0) * 6.5
+                preference_score += recent_category_weights.get(product.category, 0) * 4.0
+                preference_score += recent_subcategory_weights.get((product.category, product.subcategory), 0) * 9.0
+                strongest_recent_subcategory = recent_subcategory_weights.most_common(1)
+                if (
+                    strongest_recent_subcategory and
+                    product.category == strongest_recent_subcategory[0][0][0] and
+                    product.subcategory != strongest_recent_subcategory[0][0][1]
+                ):
+                    preference_score += strongest_recent_subcategory[0][1] * 8.0
                 preference_score += exporter_weights.get(product.owner_id, 0) * 0.8
+                if product.category and category_weights.get(product.category, 0):
+                    strongest_subcategory = subcategory_weights.most_common(1)
+                    if strongest_subcategory and product.subcategory != strongest_subcategory[0][0][1]:
+                        preference_score += category_weights.get(product.category, 0) * 1.2
 
                 price_score = 0.0
                 if avg_price and product.price:
@@ -2106,8 +2130,14 @@ class ProductViewSet(viewsets.ModelViewSet):
             else:
                 method = 'amazon_style_behavioral_hybrid_v2'
 
+            dominant_recent_category = None
+            if recent_category_weights:
+                dominant_recent_category = recent_category_weights.most_common(1)[0][0]
+
             scored_products.sort(
                 key=lambda item: (
+                    1 if dominant_recent_category and item[1].category == dominant_recent_category else 0,
+                    recent_category_weights.get(item[1].category, 0),
                     item[0],
                     getattr(item[1], 'sales_count', 0),
                     getattr(item[1], 'favorite_count', 0),

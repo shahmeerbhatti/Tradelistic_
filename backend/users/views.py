@@ -31,24 +31,27 @@ def superadmin_required(view_func):
     return _wrapped_view
 
 class UserSerializer(serializers.ModelSerializer):
+    user_type = serializers.ChoiceField(choices=User.USER_TYPE_CHOICES, allow_null=False, required=True)
+
     class Meta:
         model = User
         fields = ('id', 'username', 'email', 'password', 'user_type', 'city', 'state_country', 'first_name', 'last_name')
         extra_kwargs = {
-            'password': {'write_only': True},
-            'user_type': {'required': True}
+            'password': {'write_only': True}
         }
 
     def create(self, validated_data):
+        user_type = validated_data['user_type']
         user = User.objects.create_user(
             username=validated_data['username'],
             email=validated_data['email'],
             password=validated_data['password'],
-            user_type=validated_data['user_type'],
+            user_type=user_type,
             city=validated_data.get('city', ''),
             state_country=validated_data.get('state_country', ''),
             first_name=validated_data.get('first_name', ''),
-            last_name=validated_data.get('last_name', '')
+            last_name=validated_data.get('last_name', ''),
+            is_approved=user_type == 'importer'
         )
         return user
 
@@ -81,6 +84,10 @@ class SignupViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     permission_classes = [permissions.AllowAny]
 
+    def perform_create(self, serializer):
+        user_type = serializer.validated_data['user_type']
+        serializer.save(is_approved=user_type == 'importer')
+
 # ============ SUPER ADMIN ENDPOINTS ============
 
 @api_view(['GET'])
@@ -111,7 +118,8 @@ def admin_dashboard(request):
     # Pending exporters (those who haven't been explicitly approved)
     pending_exporters = User.objects.filter(
         user_type='exporter',
-        is_active=True
+        is_active=True,
+        is_approved=False
     ).count()
     
     stats = {
@@ -225,7 +233,7 @@ def admin_pending_exporters(request):
     from stores.models import Store
     
     # Get exporters who have created stores
-    exporters = User.objects.filter(user_type='exporter', is_active=True)
+    exporters = User.objects.filter(user_type='exporter', is_active=True, is_approved=False)
     
     pending_list = []
     for exporter in exporters:
@@ -274,6 +282,7 @@ def admin_approve_exporter(request, user_id):
         
         # Mark as approved (ensure active)
         user.is_active = True
+        user.is_approved = True
         user.save()
         
         # Activate their store if they have one
@@ -286,6 +295,33 @@ def admin_approve_exporter(request, user_id):
         except Store.DoesNotExist:
             message = f'Exporter {user.username} approved successfully (no store yet)'
         
+        return Response({'message': message})
+    except User.DoesNotExist:
+        return Response(
+            {'error': 'Exporter not found'},
+            status=status.HTTP_404_NOT_FOUND
+        )
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+@superadmin_required
+def admin_reject_exporter(request, user_id):
+    """Reject an exporter approval request"""
+    try:
+        user = User.objects.get(id=user_id, user_type='exporter')
+        user.is_active = False
+        user.is_approved = False
+        user.save()
+
+        try:
+            from stores.models import Store
+            store = Store.objects.get(owner=user)
+            store.is_active = False
+            store.save()
+            message = f'Exporter {user.username} and their store rejected successfully'
+        except Store.DoesNotExist:
+            message = f'Exporter {user.username} rejected successfully'
+
         return Response({'message': message})
     except User.DoesNotExist:
         return Response(

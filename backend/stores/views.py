@@ -17,7 +17,15 @@ class StoreSerializer(serializers.ModelSerializer):
             'id', 'seller_name', 'name', 'description', 'logo', 'logo_url', 'phone', 'email', 
             'website', 'address_line1', 'address_line2', 'city', 'state', 
             'country', 'postal_code', 'business_type', 'established_year', 
-            'employee_count', 'owner', 'created_at', 'updated_at'
+            'employee_count', 'ntn', 'strn', 'psw_registered', 'bank_profile_linked',
+            'product_category', 'has_certificate_of_origin_support',
+            'company_registration_no', 'ssm_registration_no',
+            'customs_docs_workflow_ready', 'customs_agent_assigned',
+            'miti_strategic_trade_ready', 'business_number', 'rm_export_program_id',
+            'cers_account_ready', 'abn', 'export_declaration_method', 'dcrn',
+            'uen', 'customs_account_active', 'tradenet_declarant_enabled',
+            'eori_gb', 'cds_subscribed', 'owner',
+            'created_at', 'updated_at'
         ]
     
     def get_logo_url(self, obj):

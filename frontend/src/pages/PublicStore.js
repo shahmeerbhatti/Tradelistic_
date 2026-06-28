@@ -115,8 +115,10 @@ const PublicStore = () => {
         </div>
 
         <div className="store-hero-copy">
-          <span className="store-eyebrow">Verified exporter</span>
-          <h1>{storeData.name}</h1>
+          <div className="store-title-row">
+            <h1>{storeData.name}</h1>
+            <span className="store-eyebrow">Verified exporter</span>
+          </div>
           <p>{storeData.description || 'Curated trade catalog from a registered exporter on Tradelistic.'}</p>
           <div className="store-meta-row">
             <span><i className="fas fa-box"></i>{products.length} items</span>
@@ -131,7 +133,6 @@ const PublicStore = () => {
             <i className="fas fa-message"></i>
             Contact seller
           </button>
-          <span>Seller: {storeData.seller_name || storeData.owner}</span>
         </div>
       </section>
 

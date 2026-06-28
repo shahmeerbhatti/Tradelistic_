@@ -51,6 +51,50 @@ class Store(models.Model):
         ],
         blank=True
     )
+
+    # Export compliance profile
+    ntn = models.CharField(max_length=80, blank=True)
+    strn = models.CharField(max_length=80, blank=True)
+    psw_registered = models.BooleanField(default=False)
+    bank_profile_linked = models.BooleanField(default=False)
+    product_category = models.CharField(
+        max_length=40,
+        choices=[
+            ('general', 'General Goods'),
+            ('food_agriculture', 'Food / Agriculture'),
+            ('chemicals', 'Chemicals'),
+            ('machinery_industrial', 'Machinery / Industrial Goods'),
+            ('textiles', 'Textiles'),
+            ('electronics', 'Electronics'),
+        ],
+        default='general'
+    )
+    has_certificate_of_origin_support = models.BooleanField(default=False)
+    company_registration_no = models.CharField(max_length=80, blank=True)
+    ssm_registration_no = models.CharField(max_length=80, blank=True)
+    customs_docs_workflow_ready = models.BooleanField(default=False)
+    customs_agent_assigned = models.BooleanField(default=False)
+    miti_strategic_trade_ready = models.BooleanField(default=False)
+    business_number = models.CharField(max_length=80, blank=True)
+    rm_export_program_id = models.CharField(max_length=80, blank=True)
+    cers_account_ready = models.BooleanField(default=False)
+    abn = models.CharField(max_length=80, blank=True)
+    export_declaration_method = models.CharField(
+        max_length=20,
+        choices=[
+            ('', 'Not selected'),
+            ('self', 'Self filing'),
+            ('agent', 'Customs agent'),
+        ],
+        blank=True,
+        default=''
+    )
+    dcrn = models.CharField(max_length=80, blank=True)
+    uen = models.CharField(max_length=80, blank=True)
+    customs_account_active = models.BooleanField(default=False)
+    tradenet_declarant_enabled = models.BooleanField(default=False)
+    eori_gb = models.CharField(max_length=80, blank=True)
+    cds_subscribed = models.BooleanField(default=False)
     
     # Settings
     is_active = models.BooleanField(default=True)

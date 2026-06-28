@@ -257,9 +257,6 @@ const Navbar = () => {
 
         <div className="relative" ref={searchRef}>
           <form onSubmit={submitSearch} className="fresh-search-form flex h-[52px] items-center rounded-[20px] border border-blue-100 bg-white shadow-[0_14px_34px_rgba(49,91,210,0.10)] dark:border-white/10 dark:bg-white/8">
-            <span className="fresh-search-icon grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-blue-50 text-blue-600 dark:bg-white/10 dark:text-blue-200">
-              <i className="fas fa-search" aria-hidden="true"></i>
-            </span>
             <input
               className="fresh-search-input h-full min-w-0 flex-1 bg-transparent text-sm font-semibold text-slate-950 outline-none placeholder:text-slate-400 dark:text-white dark:placeholder:text-blue-100/70"
               type="search"
@@ -270,8 +267,8 @@ const Navbar = () => {
               placeholder="Search laptops, apparel, home goods..."
               aria-label="Search products"
             />
-            <button className="fresh-search-button h-10 rounded-2xl bg-blue-600 px-5 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700" type="submit">
-              {isSearching ? <i className="fas fa-spinner fa-spin" aria-hidden="true"></i> : 'Search'}
+            <button className="fresh-search-button h-10 rounded-2xl bg-blue-600 px-5 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700" type="submit" aria-label="Search products" title="Search">
+              {isSearching ? <i className="fas fa-spinner fa-spin" aria-hidden="true"></i> : <i className="fas fa-search" aria-hidden="true"></i>}
             </button>
           </form>
 

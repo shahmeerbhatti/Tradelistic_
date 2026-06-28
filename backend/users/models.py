@@ -17,6 +17,12 @@ class User(AbstractUser):
     city = models.CharField(max_length=100, blank=True, null=True)
     state_country = models.CharField(max_length=100, blank=True, null=True)
     is_superadmin = models.BooleanField(default=False)
+    is_approved = models.BooleanField(default=False)
+
+    def save(self, *args, **kwargs):
+        if self.is_approved is None:
+            self.is_approved = False
+        super().save(*args, **kwargs)
 
     def is_exporter(self):
         return self.user_type == 'exporter' if self.user_type else False

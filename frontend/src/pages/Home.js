@@ -30,7 +30,6 @@ const ProductCard = ({ product }) => {
       <div className="target-product-body">
         <span>{product.category || 'Marketplace'}</span>
         <h3>{product.name}</h3>
-        <p>{product.description || 'Retail-ready product from the Tradelistic marketplace.'}</p>
         <strong>${Number(product.price || 0).toFixed(2)}</strong>
       </div>
     </button>
@@ -116,7 +115,6 @@ const Home = () => {
     <main className="target-home">
       <section className="target-hero">
         <div className="target-hero-copy">
-          <span className="target-kicker">Welcome to Tradelistic</span>
           <h1>Hot marketplace deals up to 15% off</h1>
           <p>
             Browse the newest products, compare trusted sellers, manage offers and checkout from a polished ecommerce storefront.
@@ -157,7 +155,6 @@ const Home = () => {
           <div className="target-deal-copy">
             <span>{heroProduct?.category || 'Our first ecommerce showcase'}</span>
             <h2>{heroProduct?.name || 'Premium storefront experience'}</h2>
-            <p>{heroProduct ? 'A featured product from your active catalog.' : 'Start the backend to fill this hero with live catalog products.'}</p>
             <strong>{heroProduct ? `$${Number(heroProduct.price || 0).toFixed(2)}` : 'Live catalog preview'}</strong>
           </div>
         </div>

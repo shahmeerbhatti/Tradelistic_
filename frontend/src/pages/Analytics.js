@@ -97,54 +97,8 @@ const Analytics = () => {
       <div className="analytics-container">
         <div className="analytics-header">
           <div className="header-content">
-            <button className="back-btn" onClick={() => navigate('/exporter-dashboard')}>
-              <i className="fas fa-arrow-left"></i>
-              Back to Dashboard
-            </button>
             <h1>Product Analytics</h1>
             <p>Track your product views, favorites, and sales</p>
-          </div>
-          
-          <div className="summary-cards">
-            <div className="summary-card views-card">
-              <div className="card-icon">
-                <i className="fas fa-eye"></i>
-              </div>
-              <div className="card-info">
-                <h3>{analytics.views.length}</h3>
-                <p>Total Views</p>
-              </div>
-            </div>
-            
-            <div className="summary-card favorites-card">
-              <div className="card-icon">
-                <i className="fas fa-heart"></i>
-              </div>
-              <div className="card-info">
-                <h3>{analytics.favorites.length}</h3>
-                <p>Total Favorites</p>
-              </div>
-            </div>
-            
-            <div className="summary-card sales-card">
-              <div className="card-icon">
-                <i className="fas fa-shopping-cart"></i>
-              </div>
-              <div className="card-info">
-                <h3>{analytics.sales.length}</h3>
-                <p>Total Sales</p>
-              </div>
-            </div>
-
-            <div className="summary-card reviews-card">
-              <div className="card-icon">
-                <i className="fas fa-star"></i>
-              </div>
-              <div className="card-info">
-                <h3>{analytics.reviews.length}</h3>
-                <p>Total Reviews</p>
-              </div>
-            </div>
           </div>
         </div>
 

@@ -6,6 +6,7 @@ import {
   toggleUserStatus, 
   getPendingExporters, 
   approveExporter,
+  rejectExporter,
   getAdminTransactions,
   getTransactionAnalytics,
   toggleStoreStatus,
@@ -49,6 +50,7 @@ const SuperAdminDashboard = () => {
   const [loadingStoreToggle, setLoadingStoreToggle] = useState(null);
   const [approvalToast, setApprovalToast] = useState(null);
   const [approvingExporterId, setApprovingExporterId] = useState(null);
+  const [rejectingExporterId, setRejectingExporterId] = useState(null);
   
   // B2B Business Logic States
   const [businessMetrics, setBusinessMetrics] = useState({
@@ -260,6 +262,28 @@ const SuperAdminDashboard = () => {
         alert('Error approving exporter');
       } finally {
         setApprovingExporterId(null);
+      }
+    }
+  };
+
+  const handleRejectExporter = async (userId) => {
+    if (window.confirm('Reject this exporter account?')) {
+      try {
+        setRejectingExporterId(userId);
+        const exporter = pendingExporters.find((item) => item.id === userId);
+        await rejectExporter(userId);
+        setApprovalToast({
+          name: exporter?.store_name || exporter?.username || 'Exporter',
+          message: 'Rejected successfully'
+        });
+        await loadPendingExporters();
+        await loadDashboardData();
+        setTimeout(() => setApprovalToast(null), 3200);
+      } catch (error) {
+        console.error('Error rejecting exporter:', error);
+        alert(error.response?.data?.error || 'Error rejecting exporter');
+      } finally {
+        setRejectingExporterId(null);
       }
     }
   };
@@ -997,9 +1021,11 @@ const SuperAdminDashboard = () => {
                         </button>
                         <button 
                           className="btn btn-outline-danger"
-                          onClick={() => handleToggleUserStatus(exporter.id, true)}
+                          onClick={() => handleRejectExporter(exporter.id)}
+                          disabled={rejectingExporterId === exporter.id}
                         >
-                          <i className="fas fa-times me-2"></i>Reject
+                          <i className={`fas ${rejectingExporterId === exporter.id ? 'fa-spinner fa-spin' : 'fa-times'} me-2`}></i>
+                          {rejectingExporterId === exporter.id ? 'Rejecting...' : 'Reject'}
                         </button>
                       </div>
                     </div>
@@ -1461,11 +1487,13 @@ const SuperAdminDashboard = () => {
                       {filteredTransactions.slice(0, 100).map(transaction => (
                         <tr key={transaction.id}>
                           <td>
-                            <strong>#{transaction.sales_id}</strong>
+                            <div className="transaction-order-cell">
+                              <strong>#{transaction.sales_id}</strong>
                             <small className="d-block text-muted">ID: {transaction.id}</small>
+                            </div>
                           </td>
                           <td>
-                            <div>
+                            <div className="transaction-customer-cell">
                               <strong>{transaction.customer_name || 'N/A'}</strong>
                               <small className="d-block text-muted">{transaction.customer_email || 'N/A'}</small>
                               {transaction.customer_type && (
@@ -1474,7 +1502,7 @@ const SuperAdminDashboard = () => {
                             </div>
                           </td>
                           <td>
-                            <div>
+                            <div className="transaction-product-cell">
                               <strong>{transaction.product_name || 'N/A'}</strong>
                               <small className="d-block text-muted">
                                 Qty: {transaction.quantity || 1} | Unit: ${parseFloat(transaction.unit_price || 0).toFixed(2)}
@@ -1498,7 +1526,7 @@ const SuperAdminDashboard = () => {
                             )}
                           </td>
                           <td>
-                            <div>
+                            <div className="transaction-amount-cell">
                               <strong>${parseFloat(transaction.final_total || 0).toFixed(2)}</strong>
                               {transaction.tax_amount > 0 && (
                                 <small className="d-block text-muted">Tax: ${parseFloat(transaction.tax_amount).toFixed(2)}</small>
@@ -1509,6 +1537,7 @@ const SuperAdminDashboard = () => {
                             </div>
                           </td>
                           <td>
+                            <div className="transaction-status-cell">
                             <span className={`badge ${
                               transaction.order_status === 'delivered' ? 'bg-success' :
                               transaction.order_status === 'shipped' ? 'bg-info' :
@@ -1522,9 +1551,10 @@ const SuperAdminDashboard = () => {
                                 Pay: {transaction.payment_status}
                               </small>
                             )}
+                            </div>
                           </td>
                           <td>
-                            <div>
+                            <div className="transaction-date-cell">
                               <strong>{new Date(transaction.created_at).toLocaleDateString()}</strong>
                               <small className="d-block text-muted">
                                 {new Date(transaction.created_at).toLocaleTimeString()}
